@@ -133,11 +133,12 @@ i{
 .slider{
     height: 400px;
     width: auto;
-    position: absolute;
+    position: relative;
     top: 0;
     right:0;
     display: flex;
     align-items: center;
+    flex-direction: column;
     padding: 10px 0 10px 0;
     overflow: hidden;
 }
@@ -161,11 +162,11 @@ i{
     height: 100%;
 }
 .left,.right{
-    height: 380px;
+    height: 360px;
     width: 50px;
     background: rgba(0,0,0,0.5);
     position: absolute;
-    top: 0px;
+    top: 20px;
     font-size: 20px;
     display: flex;
     justify-content: center;
@@ -173,13 +174,13 @@ i{
     z-index: 9;
 }
 .left{
-    left: 50px; 
+    left: 4.6%; 
 }
 .left i,.right i{
     color: white;
 }
 .right{
-    right: 10px;
+    right: 0px;
 }
 @media screen and (max-width: 480px){
    .slider{

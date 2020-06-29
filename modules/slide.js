@@ -16,7 +16,6 @@ export function slide(){
     incr = 0
       }
 }
-console.log(incr)
 export function Return(){
  incr = incr - s
   if(incr !== length*10){
@@ -28,6 +27,5 @@ export function Return(){
     document.querySelector('.slide').style = `transition:all 2s linear`
     incr = 0
       }
-      console.log(incr)
 
 }
