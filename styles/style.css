@@ -30,7 +30,7 @@ body{
     width: 100%;
     position: absolute;
     left: 0;
-    top: 56px;
+    top: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -105,6 +105,16 @@ i{
     .side-nav{
         width: 100vw;
     }
+    .side-nav.toggle{
+        width: 50px;
+    }
+    .burgerContainer{
+        left: 50px;
+        transform: translate(-50%);
+    }
+    .burgerContainer.toggle{
+        left: 25px;
+    }
 }
 
 
@@ -152,11 +162,24 @@ i{
     z-index: 9;
 }
 .left{
-    left: 83px; 
+    left: 50px; 
 }
 .left i,.right i{
     color: white;
 }
 .right{
     right: 10px;
+}
+@media screen and (max-width: 480px){
+   .slider{
+       height: 300px;
+   }
+   .right , .left {
+       top: 19px;
+       height: 261px;
+       width: 30px;
+   }
+    .previews{
+        width: 150px;
+    }
 }
