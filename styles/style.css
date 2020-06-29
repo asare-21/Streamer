@@ -12,7 +12,7 @@ body{
 }
 .side-nav{
     height: 100vh;
-    width: 400px;
+    width: 83px;
     background:linear-gradient(to right, rgb(15, 32, 39), rgb(32, 58, 67), rgb(44, 83, 100));
     position: absolute;
     left: 0;
@@ -21,7 +21,7 @@ body{
     z-index: 10;
 }
 .side-nav.toggle{
-    width: 83px;
+    width: 400px;
     transition: all 0.5s linear;
     transition: all 0.5s linear;
 }
