@@ -103,13 +103,13 @@ i{
 /* media queries */
 @media screen and (max-width:480px){
     .side-nav{
-        width: 100vw;
-    }
-    .side-nav.toggle{
         width: 50px;
     }
+    .side-nav.toggle{
+        width: 100vw;
+    }
     .burgerContainer{
-        left: 50px;
+        left: 25px;
         transform: translate(-50%);
     }
     .burgerContainer.toggle{
@@ -118,13 +118,13 @@ i{
     .navigation > div p{
         height: 100%;
         width: auto;
-        display: flex;
+        display: none;
         justify-content: center;
         align-items: center;
         font-size: 20px;
     }
     .navigation > div p.show{
-        display: none;
+        display: flex;
     }
 }
 
