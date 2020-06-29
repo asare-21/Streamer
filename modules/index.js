@@ -20,13 +20,13 @@ document.querySelector('.burgerContainer').addEventListener('click',(e)=> {
        })
        const l = document.querySelector('.burgerContainer')
        if(count){
-           l.innerHTML = `<i class="fas fa-arrow-right"></i>`
-           count = false
-       }
-       else{
            l.innerHTML = ` <div class="line"></div>
            <div class="line"></div>
            <div class="line"></div>`
+           count = false
+       }
+       else{
+        l.innerHTML = `<i class="fas fa-arrow-right"></i>`
            count = true
        }
    }
