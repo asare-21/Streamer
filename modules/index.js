@@ -5,13 +5,13 @@ const right = document.querySelector('.right')
 let count = true
 document.querySelector('.burgerContainer').addEventListener('click',(e)=> {
 
-   if(e.target.classList.contains('line') || e.target.classList.contains('burgerContainer') ||e.target.classList.contains('fas')){
+   if(e.target.classList.contains('line') || e.target.classList.contains('burgerContainer') ||e.target.classList.contains('fa-arrow-right')){
        document.querySelector('.side-nav').classList.toggle('toggle')
 
        if(screen.width < 600){
         document.querySelector('.burgerContainer').classList.toggle('toggle')
        }
-       
+
        document.querySelectorAll('.line').forEach(line =>{
            line.classList.toggle('animate')
        })

@@ -48,13 +48,13 @@ body{
 .navigation > div p{
     height: 100%;
     width: auto;
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
     font-size: 20px;
 }
 .navigation > div p.show{
-    display: none;
+    display: flex;
 }
 i{
     /* height: 100%; */
