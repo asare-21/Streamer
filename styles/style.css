@@ -23,7 +23,6 @@ body{
 .side-nav.toggle{
     width: 83px;
     transition: all 0.5s linear;
-    background: #303a52;
     transition: all 0.5s linear;
 }
 .navigation{
