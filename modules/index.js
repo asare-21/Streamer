@@ -1,5 +1,7 @@
 import {slide} from './slide.js'
 import {Return} from './slide.js'
+import {Fetch} from './fetch.js'
+import {cfetch} from './cfectch.js'
 const left = document.querySelector('.left')
 const right = document.querySelector('.right')
 let count = true
@@ -32,5 +34,6 @@ document.querySelector('.burgerContainer').addEventListener('click',(e)=> {
    }
 }
 )
+// window.onload = Fetch
 right.addEventListener('click',slide)
 left.addEventListener('click',Return)
