@@ -38,6 +38,37 @@ body{
     transition: all 0.5s linear;
     transition: all 0.5s linear;
 }
+.category{
+    width: 100%;
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    top: 500px;
+    left: 0;
+}
+.category p{
+    visibility: visible;
+}
+
+.category li{
+    list-style: none;
+    height: 50px;
+    width: 100%;
+    padding: 10px 10px 10px 10px;
+    text-align:center;
+    cursor: pointer;
+    transition: all 0.2s linear;
+    visibility: hidden;
+}
+.category li.toggle{
+    visibility: visible;
+}
+.category li:hover{
+    color: royalblue;
+}
 .navigation{
     height:300px;
     width: 100%;
@@ -304,7 +335,7 @@ nav li{
     .movieContainer{
         width: 100%;
         padding: 0 20px 0 20px;
-        top: 130px;
+        top: 10px;
     }
 }
 @media screen and (max-width:850px){
@@ -320,7 +351,7 @@ nav li{
     .movieContainer{
         width: 100%;
         padding: 0 20px 0 20px;
-        top: 130px;
+        top: 10px;
     }
 }
 @media screen and (max-width:600px){
@@ -341,16 +372,17 @@ nav li{
         width: 100%;
        display: grid;
        grid-template-columns:50% 50%;
-        top: 130px;
+        top: 10px;
     }
     .movie{
         height: 350px;
+        width: 185px;
     }
 }
 @media screen and (max-width:480px){
     .movies-container{
         top: 300px;
-        width: 85vw;
+        width: 89vw;
     }
     nav{
         width:99%;
@@ -364,11 +396,40 @@ nav li{
     .movieContainer{
         width: 100%;
         /* padding: 0 10px 0 10px; */
-        top: 130px;
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
+        top: 10px;
+        /* float: left; */
+        margin: 5px 5px 5px 5px;
+        padding: 0 !important;
+    }
+    .movie{
+        margin: 10px 10px 10px 10px;
+    }
+}
+@media screen and (max-width:451px){
+    .movies-container{
+        top: 300px;
+        width: 89vw;
+    }
+    nav{
+        width:99%;
+        overflow: hidden;
+        overflow-y: scroll;
+    }
+    nav li{
+        font-size: 13px;
+        width: 100px;
+    }
+    .movieContainer{
+        width: 100%;
+        top: 10px;
+        display: grid;
+        grid-template-columns: 100%;
+        
+    }
+    .movie{
+        margin: 10px 10px 10px 10px;
+        width: 80%;
+        height: 340px;
+        transform: translateX(30px);
     }
 }

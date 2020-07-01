@@ -5,10 +5,29 @@ import {cfetch} from './cfectch.js'
 const left = document.querySelector('.left')
 const right = document.querySelector('.right')
 let count = true
+let c = true
+
 document.querySelector('.burgerContainer').addEventListener('click',(e)=> {
 
    if(e.target.classList.contains('line') || e.target.classList.contains('burgerContainer') ||e.target.classList.contains('fa-arrow-right')){
        document.querySelector('.side-nav').classList.toggle('toggle')
+       document.querySelectorAll('.category li').forEach(cat => {
+           cat.classList.toggle('toggle')
+       })
+       //for thje icons
+      if(c){
+        document.querySelectorAll('.navigation i').forEach(i =>{
+            i.style.display= 'none'
+            c = false
+        })
+      }
+      else{
+        c = true
+        document.querySelectorAll('.navigation i').forEach(i =>{
+            i.style.display = 'flex'
+        })
+      }
+       //////////////
 
        if(screen.width < 600){
         document.querySelector('.burgerContainer').classList.toggle('toggle')
@@ -32,6 +51,7 @@ document.querySelector('.burgerContainer').addEventListener('click',(e)=> {
            count = true
        }
    }
+  
 }
 )
 //making sure the side nav is always of lenght
