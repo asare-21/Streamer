@@ -7,10 +7,10 @@ export const cfetch = () =>{
       client.sync({initial: true})
       .then((response) => {
         const r = response.entries
-        console.log(r)
+        // console.log(r)
         r.forEach(r => {
             const R = r.fields
-            console.log(R)
+            // console.log(R)
             const temp = `
             
             <img src=${R.image['en-US'].fields.file['en-US'].url} alt="">
@@ -34,8 +34,5 @@ export const cfetch = () =>{
         })
       })
 
-    // fetch('/api').then((e)=>{
-    //   console.log(e)
-    // })
 
 }

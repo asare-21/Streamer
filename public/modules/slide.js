@@ -15,7 +15,6 @@ client.sync({initial: true})
   l.forEach(el => {
     num++
   })
-  console.log(num)
 })
 
 
