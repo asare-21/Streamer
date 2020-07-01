@@ -145,23 +145,25 @@ i{
 /* Slider styles */
 .slider{
     height: 400px;
-    width: auto;
-    position: relative;
+    width: 90vw;
+    position: absolute;
     top: 0;
     right:0;
-    display: flex;
-    align-items: center;
+    float: left;
+    /* align-items: center; */
     flex-direction: column;
     padding: 10px 0 10px 0;
     overflow: hidden;
+    overflow-x: scroll;
 }
 .slide{
     height: 100%;
     width: auto;
     display: flex;
-    align-items: center;
+    /* align-items: center; */
     padding: 10px 0 10px 0;
     overflow: hidden;
+    overflow-x:scroll;
     /* transform: translateX(10%); */
     transition: all 0.5s linear;
 }
@@ -187,7 +189,7 @@ i{
     z-index: 9;
 }
 .left{
-    left: 75px; 
+    left: 0px; 
 }
 .left i,.right i{
     color: white;
