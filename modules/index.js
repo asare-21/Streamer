@@ -2,7 +2,7 @@ import {slide} from './slide.js'
 import {Return} from './slide.js'
 import {Fetch} from './fetch.js'
 import {cfetch} from './cfectch.js'
-require('dotenv').config()
+//require('dotenv').config()
 const left = document.querySelector('.left')
 const right = document.querySelector('.right')
 let count = true
