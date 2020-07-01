@@ -1,8 +1,16 @@
-var express = require('express');
-var app = express();
+const express = require('express')
+const app = express()
+const port = 3000
+const dotenv = require('dotenv')
+require('dotenv').config()
+app.use(express.static('public'))
 
-//setting middleware
-app.use(express.static(__dirname + 'public')); //Serves resources from public folder
+var contentful = require('contentful');
+
+var client = contentful.createClient({
+  space: process.env.SpaceID,
+  accessToken:process.env.ContentDeliveryApi
+});
 
 
-var server = app.listen(5000);
+app.listen(port, () => console.log(`Listening at http://localhost:${port}`))

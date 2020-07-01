@@ -1,9 +1,8 @@
-
-
+// 
 export const cfetch = () =>{
     var client = contentful.createClient({
-        space:process.env.SpaceID,
-        accessToken:process.env.ContentDeliveryApi
+        space:'g83j5mjjg3ig',
+        accessToken:'guJQMz5h39zhGLFemZudb_AUudM5d23tf0RkNehkPXY'
       })
       client.sync({initial: true})
       .then((response) => {
@@ -24,4 +23,9 @@ export const cfetch = () =>{
             document.querySelector('.movieContainer').append(d)
         })
       })
+
+    // fetch('/api').then((e)=>{
+    //   console.log(e)
+    // })
+
 }
