@@ -199,6 +199,7 @@ i{
 @media screen and (max-width: 600px){
    .slider{
        height: 300px;
+       width: 87vw;
    }
    .right , .left {
        top: 19px;
