@@ -17,11 +17,20 @@ export const cfetch = () =>{
             <p class="title" >${R.title['en-US']} <a href=${R.downloadUrl} download><i class="fas fa-cloud-download-alt"></i></a> </p>
         
             `
+            const tem = `
+            
+            <img src=${R.image['en-US'].fields.file['en-US'].url} alt="">
+           
+        
+            `
             const d = document.createElement('div')
+            const slide = document.createElement('div')
+            slide.className = 'slide'
+            slide.innerHTML = tem
             d.className = 'movie'
             d.innerHTML = temp
             document.querySelector('.movieContainer').append(d)
-            document.querySelector('.slide').append(d)
+            document.querySelector('.slide').append(slide)
         })
       })
 
