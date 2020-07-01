@@ -21,6 +21,7 @@ export const cfetch = () =>{
             d.className = 'movie'
             d.innerHTML = temp
             document.querySelector('.movieContainer').append(d)
+            document.querySelector('.slide').append(d)
         })
       })
 
