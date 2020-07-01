@@ -145,26 +145,25 @@ i{
 /* Slider styles */
 .slider{
     height: 400px;
-    width: 90vw;
+    width:90vw;
     position: absolute;
     top: 0;
     right:0;
-    float: left;
-    /* align-items: center; */
+    /* float: left; */
+    /* display: block; */
     flex-direction: column;
     padding: 10px 0 10px 0;
-    overflow: hidden;
+    /* overflow: hidden; */
     overflow-x: scroll;
 }
 .slide{
     height: 100%;
     width: auto;
-    display: flex;
+    display: inline-flex;
     /* align-items: center; */
     padding: 10px 0 10px 0;
     overflow: hidden;
     overflow-x:scroll;
-    /* transform: translateX(10%); */
     transition: all 0.5s linear;
 }
 .previews{
