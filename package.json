@@ -1,0 +1,23 @@
+{
+  "name": "streaming-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "start.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jasare4525/Streamer.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jasare4525/Streamer/issues"
+  },
+  "homepage": "https://github.com/jasare4525/Streamer#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "dotenv": "^8.2.0"
+  }
+}

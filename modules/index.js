@@ -2,6 +2,7 @@ import {slide} from './slide.js'
 import {Return} from './slide.js'
 import {Fetch} from './fetch.js'
 import {cfetch} from './cfectch.js'
+require('dotenv').config()
 const left = document.querySelector('.left')
 const right = document.querySelector('.right')
 let count = true
@@ -34,6 +35,19 @@ document.querySelector('.burgerContainer').addEventListener('click',(e)=> {
    }
 }
 )
-// window.onload = Fetch
+//making sure the side nav is always of lenght
+const sn = document.querySelector('.side-nav')
+    function checkLength (){
+       if(pageYOffset > 100){
+           sn.style.height = `${pageYOffset+10}vh`
+    } 
+    else{
+        sn.style.height = `${100}vh`
+
+    }
+    }
+   onscroll = checkLength
+
+window.onload = cfetch
 right.addEventListener('click',slide)
 left.addEventListener('click',Return)

@@ -1,13 +1,27 @@
-require('dotenv').config()
+
 
 export const cfetch = () =>{
     var client = contentful.createClient({
-        space: process.env.SpaceID,
-        accessToken: process.env.ContentDeliveryApi
+        space:"g83j5mjjg3ig",
+        accessToken:"guJQMz5h39zhGLFemZudb_AUudM5d23tf0RkNehkPXY"
       })
       client.sync({initial: true})
       .then((response) => {
-        console.log(response.entries)
-        console.log(response.assets)
+        const r = response.entries
+        console.log(r)
+        r.forEach(r => {
+            const R = r.fields
+            console.log(R)
+            const temp = `
+            
+            <img src=${R.image['en-US'].fields.file['en-US'].url} alt="">
+            <p class="title" >${R.title['en-US']} <a href=${R.downloadUrl} download><i class="fas fa-cloud-download-alt"></i></a> </p>
+        
+            `
+            const d = document.createElement('div')
+            d.className = 'movie'
+            d.innerHTML = temp
+            document.querySelector('.movieContainer').append(d)
+        })
       })
 }
