@@ -11,6 +11,7 @@ document.querySelector('.burgerContainer').addEventListener('click',(e)=> {
 
    if(e.target.classList.contains('line') || e.target.classList.contains('burgerContainer') ||e.target.classList.contains('fa-arrow-right')){
        document.querySelector('.side-nav').classList.toggle('toggle')
+       document.querySelector('h5').classList.toggle('toggle')
        document.querySelectorAll('.category li').forEach(cat => {
            cat.classList.toggle('toggle')
        })
@@ -68,5 +69,5 @@ const sn = document.querySelector('.side-nav')
    onscroll = checkLength
 
 window.onload = cfetch
-right.addEventListener('click',slide)
-left.addEventListener('click',Return)
+// right.addEventListener('click',slide)
+// left.addEventListener('click',Return)
