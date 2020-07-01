@@ -25,7 +25,7 @@ export const cfetch = () =>{
             `
             const d = document.createElement('div')
             const slide = document.createElement('div')
-            slide.className = 'slide'
+            slide.className = 'previews'
             slide.innerHTML = tem
             d.className = 'movie'
             d.innerHTML = temp
