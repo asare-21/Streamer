@@ -13,7 +13,7 @@
     /* visibility: hidden; */
 }
 body.toggle{
-    overflow: hidden;
+    overflow: hidden !important;
 }
 .account-modal.toggle{
     display:block ;
@@ -162,19 +162,29 @@ select:focus{
     }
 }
 @media screen and (max-width:450px){
+    .detailsHold{
+        height: 10vh;
+        position: absolute;
+        bottom: 0;
+    }
     .modal-content{
-        width: 500px;
-        height: 400px;
+        width: 100vw;
+        height: 40vh;
         position: absolute;
         transform: translate(-50%,-50%);
     }
-
+    .picHold{
+        height: 15vh;
+    }
     .picSelect{
         width: 100px;
         height: 100px;
     }
     .name,.chooseCat{
-        width: 200px;
+        width: 150px;
         height: 40px;
+    }
+    .name input::placeholder{
+        font-size: 15px;
     }
 }

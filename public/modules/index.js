@@ -76,7 +76,7 @@ window.onload = cfetch
 const handleOrientation = (event) => {
     document.querySelector('.modal-content').style.transform = 'rotate(-90deg)'
 }
-window.addEventListener("deviceorientation", handleOrientation, true)
+// window.addEventListener("deviceorientation", handleOrientation, true)
 
 // right.addEventListener('click',slide)
 // left.addEventListener('click',Return)
