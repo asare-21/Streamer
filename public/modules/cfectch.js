@@ -13,16 +13,11 @@ export const cfetch = () =>{
             // console.log(R)
             const temp = `
             
-            <img src=${R.image['en-US'].fields.file['en-US'].url} alt="">
+             <img src=${R.image['en-US'].fields.file['en-US'].url} alt="">
             <p class="title" >${R.title['en-US']} <a href=${R.downloadUrl} download><i class="fas fa-cloud-download-alt"></i></a> </p>
         
             `
-            const tem = `
-            
-            <img src=${R.image['en-US'].fields.file['en-US'].url} alt="">
-           
-        
-            `
+            const tem = `<img src=${R.image['en-US'].fields.file['en-US'].url} alt=""> `
             const d = document.createElement('div')
             const slide = document.createElement('div')
             slide.className = 'previews'

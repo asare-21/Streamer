@@ -73,7 +73,15 @@ const sn = document.querySelector('.side-nav')
 
 window.onload = cfetch
 
-
+firebase.auth().onAuthStateChanged(function(user) {
+    if (user) {
+      // User is signed in.
+    //   window.location.replace('index.html')
+    } else {
+      // No user is signed in.
+      window.location.replace('in.html')
+    }
+  });
 
 // right.addEventListener('click',slide)
 // left.addEventListener('click',Return)

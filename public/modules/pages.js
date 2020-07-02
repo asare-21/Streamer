@@ -19,5 +19,13 @@ export const navigate = (e) => {
         //code here to display notifications or messages received from us
         window.location.replace('inbox.html')
     }
+    else if(e.target.className == 'fas fa-door-open' || e.target.className == 'door'){
+        //logout
+        firebase.auth().signOut().then(function() {
+            // Sign-out successful.
+          }).catch(function(error) {
+            // An error happened.
+          });
+    }
     
 }

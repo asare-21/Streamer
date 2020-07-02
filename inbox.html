@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script type="module" src="public/modules/index.js" defer></script>
     <link rel="stylesheet" href="public/styles/style.css">
     <link rel="stylesheet" href="public/styles/inbox.css">
+    <script src="./public/modules/index.js" type="module" defer></script>
     <script src="https://kit.fontawesome.com/4ef8fae322.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/contentful@latest/dist/contentful.browser.min.js"></script>
     <link rel="icon" href="image/river-inside-forest-near-brown-leaf-trees-696941.jpg" t>
@@ -70,5 +70,37 @@
             </div>
         </div>
     </section>
+
+
+        <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+      
+        <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-app.js"></script>
+      
+        <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+        <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-analytics.js"></script>
+      
+        <!-- Add Firebase products that you want to use -->
+        <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-firestore.js"></script>
+
+
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyAkk2SMZPX2s1amEf4dANeT_7zc8CiT_3E",
+    authDomain: "streamerghana.firebaseapp.com",
+    databaseURL: "https://streamerghana.firebaseio.com",
+    projectId: "streamerghana",
+    storageBucket: "streamerghana.appspot.com",
+    messagingSenderId: "302598523042",
+    appId: "1:302598523042:web:ca33b016ef1836d3faeffb",
+    measurementId: "G-2DPGSLXXWP"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
 </body>
 </html>

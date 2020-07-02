@@ -33,7 +33,7 @@ body.toggle{
     transition: all 0.5s linear;
 }
 .account-modal{
-    animation: fall 0.5s linear 1 both;
+    animation: fallb 0.5s linear 1 both;
 }
 .close{
     width: 50px;
