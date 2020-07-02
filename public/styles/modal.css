@@ -14,6 +14,7 @@
 }
 body.toggle{
     overflow: hidden !important;
+    height: 100vh;
 }
 .account-modal.toggle{
     display:block ;
@@ -186,5 +187,8 @@ select:focus{
     }
     .name input::placeholder{
         font-size: 15px;
+    }
+    .chooseCat label{
+        font-size: 13px;
     }
 }
