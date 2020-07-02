@@ -6,7 +6,7 @@
     <title>Streamer Ghana | Entertainment Made From Home</title>
     <script src="/public/modules/c.js" defer></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <script src="https://kit.fontawesome.com/4ef8fae322.js" crossorigin="anonymous"></script>
     <style>
         :root {
   --input-padding-x: 1.5rem;
@@ -198,6 +198,7 @@ body {
         <!-- Add Firebase products that you want to use -->
         <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-auth.js"></script>
         <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-firestore.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-performance.js"></script>
 
 
 
@@ -216,6 +217,7 @@ body {
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
   firebase.analytics();
+  firebase.performance();
 </script>
   </body>
 </html>

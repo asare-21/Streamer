@@ -3,7 +3,8 @@ var provider = new firebase.auth.FacebookAuthProvider();
 
 const googleSignIn = (e) => {
     provider.addScope('https://www.googleapis.com/auth/contacts.readonly');
-    firebase.auth().languageCode = 'pt';
+    provider.addScope('email');
+    firebase.auth().useDeviceLanguage();
 
     firebase.auth().signInWithPopup(provider).then(function(result) {
         // This gives you a Google Access Token. You can use it to access the Google API.
@@ -42,6 +43,7 @@ const fb = () => {
         // ...
       });
 }
+
 firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
       // User is signed in.
@@ -50,6 +52,7 @@ firebase.auth().onAuthStateChanged(function(user) {
       // No user is signed in.
     }
   });
+
 const signIn = (e) => {
     let email, password
     email = document.querySelector('#email').value
