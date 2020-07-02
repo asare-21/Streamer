@@ -13,8 +13,8 @@
     /* visibility: hidden; */
 }
 body.toggle{
-    overflow: hidden !important;
-    height: 100vh;
+    overflow: hidden;
+    height: 100%;
 }
 .account-modal.toggle{
     display:block ;
@@ -183,12 +183,16 @@ select:focus{
     }
     .name,.chooseCat{
         width: 150px;
-        height: 40px;
+        height: 30px;
     }
     .name input::placeholder{
-        font-size: 15px;
+        font-size: 12px;
     }
     .chooseCat label{
         font-size: 13px;
+    }
+    body.toggle{
+        overflow: hidden;
+        height: 100vh;
     }
 }
