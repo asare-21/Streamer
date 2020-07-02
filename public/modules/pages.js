@@ -19,7 +19,7 @@ export const navigate = (e) => {
         //code here to display notifications or messages received from us
         window.location.replace('inbox.html')
     }
-    else if(e.target.className == 'fas fa-door-open' || e.target.className == 'door' || e.target.className == 'p'){
+    else if(e.target.className == 'fas fa-door-open' || e.target.className == 'door' || e.target.classList.contains('p')){
         //logout
         firebase.auth().signOut().then(function() {
             // Sign-out successful.
