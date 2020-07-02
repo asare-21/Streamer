@@ -10,12 +10,12 @@ export const navigate = (e) => {
         document.querySelector('.account-modal').classList.toggle('toggle')
         document.body.classList.toggle('toggle')
     }
-    else if(e.target.className == 'fa-cogs'){
+    else if(e.target.className == 'fas fa-cogs'){
         // will desgin a modal to display the settings
 
 
     }
-    else if(e.target.className == 'fa-envelope'){
+    else if(e.target.className == 'far fa-envelope'){
         //code here to display notifications or messages received from us
         window.location.replace('inbox.html')
     }
