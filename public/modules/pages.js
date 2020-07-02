@@ -17,8 +17,7 @@ export const navigate = (e) => {
     }
     else if(e.target.className == 'fa-envelope'){
         //code here to display notifications or messages received from us
-
-
+        window.location.replace('inbox.html')
     }
     
 }
