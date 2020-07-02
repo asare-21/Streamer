@@ -2,13 +2,16 @@ import {slide} from './slide.js'
 import {Return} from './slide.js'
 import {Fetch} from './fetch.js'
 import {cfetch} from './cfectch.js'
+import {navigate} from './pages.js'
 const left = document.querySelector('.left')
 const right = document.querySelector('.right')
 let count = true
 let c = true
 
-document.querySelector('.burgerContainer').addEventListener('click',(e)=> {
+document.body.addEventListener('click',navigate)
 
+document.querySelector('.burgerContainer').addEventListener('click',(e)=> {
+   
    if(e.target.classList.contains('line') || e.target.classList.contains('burgerContainer') ||e.target.classList.contains('fa-arrow-right')){
        document.querySelector('.side-nav').classList.toggle('toggle')
        document.querySelector('h5').classList.toggle('toggle')
@@ -69,5 +72,11 @@ const sn = document.querySelector('.side-nav')
    onscroll = checkLength
 
 window.onload = cfetch
+
+const handleOrientation = (event) => {
+    document.querySelector('.modal-content').style.transform = 'rotate(-90deg)'
+}
+window.addEventListener("deviceorientation", handleOrientation, true)
+
 // right.addEventListener('click',slide)
 // left.addEventListener('click',Return)

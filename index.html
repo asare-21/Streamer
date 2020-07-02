@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script type="module" src="public/modules/index.js" defer></script>
     <link rel="stylesheet" href="public/styles/style.css">
+    <link rel="stylesheet" href="public/styles/modal.css">
     <script src="https://kit.fontawesome.com/4ef8fae322.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/contentful@latest/dist/contentful.browser.min.js"></script>
     <link rel="icon" href="image/river-inside-forest-near-brown-leaf-trees-696941.jpg" t>
@@ -63,20 +64,7 @@
         </div>
 
         <div class="movies-container">
-            <!-- <nav>
-                <li>Action</li>
-                <li>Adventure</li>
-                <li>Comedy</li>
-                <li>Crime</li>
-                <li>Drama</li>
-                <li>Fantasy</li>
-                <li>Horror</li>
-                <li>Magical</li>
-                <li>Mystery</li>
-                <li>Romance</li>
-                <li>Science Fiction</li>
 
-            </nav> -->
             <div class="movieContainer">
                 <!-- all the movie titles and stuff will be injected dynamincally -->
                 <!-- <div class="movie">
@@ -86,7 +74,48 @@
                
             </div>
         </div>
-     
+        
+        <!-- account details modal -->
+        <div class="account-modal">
+            <div class="close">
+                <div class="lin"></div>
+                <div class="lin"></div>
+            </div>
+         
+            <div class="modal-content">
+             <div class="picHold">
+                <div class="picSelect">
+                    <!-- account's picture goes here -->
+                    <img src="" alt="">
+                </div>
+                <div class="picSelect">
+                    <!-- account's picture goes here -->
+                    <i class="fas fa-plus fa-4x"></i>
+                </div>
+               </div>
+              <div class="detailsHold">
+                    <div class="name">
+                        <input type="text" id="name" placeholder="Account Owner's Name" maxlength="25" required>
+                    </div>
+            <div class="chooseCat">
+               <label for="select">Choose your favourite Genre</label> <select name="selection" id="selection" class="chooseCat">
+                    <option value="Action">Action</option>
+                    <option value="Adventure">Adventure</option>
+                    <option value="Comedy">Comedy</option>
+                    <option value="Crime">Crime</option>
+                    <option value="Drama">Drama</option>
+                    <option value="Fantasy">Fantasy</option>
+                    <option value="Horror">Horror</option>
+                    <option value="Magical">Magical</option>
+                    <option value="Mystery">Mystery</option>
+                    <option value="Romance">Romance</option>
+                    <option value="Science Fiction">Science Fiction</option>
+                </select>
+            </div>
+                   </div>
+         </div>
+        </div>
+
     </section>
 </body>
 </html>
