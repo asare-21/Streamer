@@ -1,7 +1,7 @@
 export const navigate = (e) => {
     //function to listen for clicks on the buttons
     if(e.target.className == 'fas fa-home'){
-        window.location.reload('index.html')
+        window.location.replace('index.html')
 
     }
     else if(e.target.className == 'fas fa-user' || e.target.className == 'close' || e.target.className == 'lin') {
