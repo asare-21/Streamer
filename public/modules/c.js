@@ -77,12 +77,13 @@ const signIn = (e) => {
           });
        }
        else{
-        alert('Password should contain at least 8 characters, 1 number, 1 uppercase and 1 lowercase')
+           document.getElementById('error').style.display = 'block'
        }
     }
     else{
         //show error message
-        alert('Please enter a valid email address')
+        document.getElementById('errorE').style.display = 'block'
+
     }
 }
 document.querySelector('#googleSignIn').addEventListener('click', googleSignIn)
