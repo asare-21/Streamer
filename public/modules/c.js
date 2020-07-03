@@ -2,7 +2,7 @@ var provider = new firebase.auth.GoogleAuthProvider();
 var providerf = new firebase.auth.FacebookAuthProvider();
 
 const googleSignIn = (e) => {
-    provider.addScope('https://www.googleapis.com/auth/contacts.readonly');
+    // provider.addScope('https://www.googleapis.com/auth/contacts.readonly');
     provider.addScope('email');
     firebase.auth().useDeviceLanguage();
 
