@@ -5,14 +5,19 @@
 export const description = (e) =>{
     console.log('Running')
     let store
+    let title
 
     if(e.target.className == 'far fa-window-close'){
         document.querySelector('.movieDesDisplay').style.display = 'none'
     }
 
   else{
-  if(e.target.parentElement.className == 'movie') { store=  e.target.parentElement.querySelector('#description').textContent 
+  if(e.target.parentElement.className == 'movie') {
+    store=  e.target.parentElement.querySelector('#description').textContent 
+    title=  e.target.parentElement.querySelector('.title').textContent 
     document.querySelector('.movieDesDisplay #l').textContent = store
-    document.querySelector('.movieDesDisplay').style.display = 'flex'}
+    document.querySelector('.movieDesDisplay #title').textContent = title
+    document.querySelector('.movieDesDisplay').style.display = 'flex'
+}
 }   
 }

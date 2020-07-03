@@ -10,9 +10,12 @@
     transform: translate(-50%);
     color: white;
     padding: 10px 10px 10px 10px;
+    flex-direction: column;
 }
-/* #description{
-    width: 100%;
-    height: 100%;
-    color: white;
-} */
+@media screen and (max-width:850px){
+  .movieDesDisplay{
+    width: 90%;
+    transform: translate(-43%);
+  }
+    
+}
