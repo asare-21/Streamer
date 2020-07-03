@@ -24,5 +24,19 @@
     width: 87%;
     transform: translate(-43%,0%);
   }
+  body{
+    overflow-y:scroll;
+  }
+    
+}
+@media screen and (max-width:340px){
+  .movieDesDisplay{
+    width: 87%;
+    transform: translate(-41%,0%);
+    position: relative;
+  }
+  body{
+    overflow-y:scroll;
+  }
     
 }
