@@ -6,6 +6,7 @@
     <script type="module" src="public/modules/index.js" defer></script>
     <link rel="stylesheet" href="public/styles/style.css">
     <link rel="stylesheet" href="public/styles/modal.css">
+    <link rel="stylesheet" href="public/styles/pop.css">
     <script src="https://kit.fontawesome.com/4ef8fae322.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/contentful@latest/dist/contentful.browser.min.js"></script>
     <link rel="icon" href="image/river-inside-forest-near-brown-leaf-trees-696941.jpg" t>
@@ -117,6 +118,15 @@
          </div>
         </div>
 
+            <div class="movieDesDisplay">
+               
+                <i class="far fa-window-close" style="height: 20px;
+                width: 95%; color: rgb(228, 35, 35); position: absolute;  display: flex;
+                justify-content: flex-end;
+                align-items: center;"></i>
+                <p id="l"></p>
+            </div>
+
      
     </section>
 
@@ -147,10 +157,14 @@
     appId: "1:302598523042:web:ca33b016ef1836d3faeffb",
     measurementId: "G-2DPGSLXXWP"
   };
+
+
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
   firebase.analytics();
   firebase.performance();
+
+
 </script>
 </body>
 </html>
