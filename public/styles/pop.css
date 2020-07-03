@@ -19,3 +19,10 @@
   }
     
 }
+@media screen and (max-width:600px){
+  .movieDesDisplay{
+    width: 87%;
+    transform: translate(-43%,-50%);
+  }
+    
+}
