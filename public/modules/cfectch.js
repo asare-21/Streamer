@@ -1,4 +1,3 @@
-// 
 export const cfetch = () =>{
     var client = contentful.createClient({
         space:'g83j5mjjg3ig',
@@ -7,11 +6,15 @@ export const cfetch = () =>{
       client.sync({initial: true})
       .then((response) => {
         const r = response.entries
-        // console.log(r)
+      
         r.forEach(r => {
             const R = r.fields
-            // console.log(R)
-            const temp = `
+            // console.log(R.video['en-US'].fields.file['en-US'].url)
+       
+          if(R.title['en-US'] == 'Triple Frontier'){
+            document.getElementById('video').src = R.video['en-US'].fields.file['en-US'].url 
+          }
+           const temp = `
             
              <img src=${R.image['en-US'].fields.file['en-US'].url} alt="">
             <p class="title" >${R.title['en-US']} <a href=${R.downloadUrl} download><i class="fas fa-cloud-download-alt"></i></a> </p>

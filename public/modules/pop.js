@@ -15,6 +15,10 @@ export const description = (e) =>{
   if(e.target.parentElement.className == 'movie') {
     store=  e.target.parentElement.querySelector('#description').textContent 
     title=  e.target.parentElement.querySelector('.title').textContent 
+////////  code for streaming the video goes here
+    // document.querySelector('#video').src = source
+    // console.log(src)
+
     document.querySelector('.movieDesDisplay #l').textContent = store
     document.querySelector('.movieDesDisplay #title').textContent = title
     document.querySelector('.movieDesDisplay').style.display = 'flex'

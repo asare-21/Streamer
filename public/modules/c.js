@@ -77,7 +77,7 @@ const signIn = (e) => {
             var errorMessage = error.message;
             console.log(errorMessage)
             // ...
-            alert( 'Email Address or Password in Invalid')
+            alert( 'Email Address or Password is Invalid')
           });
        }
        else{

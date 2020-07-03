@@ -5,7 +5,7 @@
     border-radius: 10px;
     display: none;
     position: fixed;
-    top: 50%;
+    top: 5%;
     left: 50%;
     transform: translate(-50%);
     color: white;
@@ -22,7 +22,7 @@
 @media screen and (max-width:600px){
   .movieDesDisplay{
     width: 87%;
-    transform: translate(-43%,-50%);
+    transform: translate(-43%,0%);
   }
     
 }

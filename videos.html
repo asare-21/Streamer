@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/contentful@latest/dist/contentful.browser.min.js"></script>
+    <title>Testing Video Streaming</title>
+</head>
+<body>
+    <video src="" controls id="video" style="width: 100%; background: lightgray;"></video>
+    <label for="Video">Video</label>
+    <input type="range" name="" id="range" value="0" max="100">
+
+
+    <script>
+        l = true
+        let D 
+
+        const video = document.getElementById('video')
+        const pause = document.getElementById('pause/play')
+        let mediaSource = new MediaSource()
+        let videoBuffer = mediaSource.addSourceBuffer('video/mp4; codecs="avc1.64001e"')
+
+
+        
+            var client = contentful.createClient({
+        space:'g83j5mjjg3ig',
+        accessToken:'guJQMz5h39zhGLFemZudb_AUudM5d23tf0RkNehkPXY'
+      })
+      client.sync({initial: true})
+      .then((response) => {
+        const r = response.entries
+        // console.log(r)
+        r.forEach(r => {
+            const R = r.fields
+            // console.log(R.video['en-US'].fields.file['en-US'].url)
+            if(R.title['en-US'] == 'Triple Frontier'){
+                const buff = R.video['en-US'].fields.file['en-US'].url     
+                const url = URL.createObjectURL(mediaSource)
+                video.src = url
+              
+       let result =  buff.arrayBuffer()
+                videoBuffer.appendBuffer(result)
+
+
+            }
+
+        })
+      })
+      const s =  setInterval(() => {
+        let t = video.currentTime
+            D = video.duration
+            // console.log(D)
+            // let node = (t/D) * 100
+         
+                 
+            //     console.log(node)
+            //     document.querySelector('#range').value = node
+
+            //
+            if(video.currentTime == D){
+           video.pause()
+           localStorage.setItem('playback', 0)
+
+            clearInterval(s)
+            console.log('Done')
+       }else{
+           console.log('More time')
+           localStorage.setItem('playback',t)
+        //    console.log(t)
+       } 
+        },1000)
+
+
+    
+       let time = localStorage.getItem('playback')
+       video.currentTime = time
+
+
+
+        
+
+
+  
+    
+    </script>
+</body>
+</html>
