@@ -82,7 +82,7 @@ firebase.auth().onAuthStateChanged(function(user) {
     //   window.location.replace('index.html')
     } else {
       // No user is signed in.
-      window.location.replace('in.html')
+      // window.location.replace('in.html')
     }
   });
 

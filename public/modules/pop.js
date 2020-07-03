@@ -3,7 +3,7 @@
 // })
 
 export const description = (e) =>{
-    console.log('Running')
+    // console.log('Running')
     let store
     let title
 
@@ -16,8 +16,11 @@ export const description = (e) =>{
     store=  e.target.parentElement.querySelector('#description').textContent 
     title=  e.target.parentElement.querySelector('.title').textContent 
 ////////  code for streaming the video goes here
-    // document.querySelector('#video').src = source
-    // console.log(src)
+    
+    console.log(e.target.parentElement.querySelector('video'))
+      if(e.target.parentElement.querySelector('video').src !== '' ){
+        document.querySelector('.video').src = e.target.parentElement.querySelector('video').src
+      }
 
     document.querySelector('.movieDesDisplay #l').textContent = store
     document.querySelector('.movieDesDisplay #title').textContent = title
