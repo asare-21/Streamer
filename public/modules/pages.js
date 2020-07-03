@@ -7,7 +7,9 @@ export const navigate = (e) => {
     else if(e.target.className == 'fas fa-user' || e.target.className == 'close' || e.target.className == 'lin') {
         //we will display a modal when the user button is clicked
         // this modal will allow the user set a profile picture, account name and choose their favorite movie categories
+        let f = true
         document.querySelector('.account-modal').classList.toggle('toggle')
+
         document.body.classList.toggle('toggle')
     }
     else if(e.target.className == 'fas fa-cogs'){

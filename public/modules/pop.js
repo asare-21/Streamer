@@ -9,6 +9,8 @@ export const description = (e) =>{
 
     if(e.target.className == 'far fa-window-close'){
         document.querySelector('.movieDesDisplay').style.display = 'none'
+        console.log('closed')
+       e.target.parentElement.querySelector('video').pause()
     }
 
   else{
@@ -17,7 +19,7 @@ export const description = (e) =>{
     title=  e.target.parentElement.querySelector('.title').textContent 
 ////////  code for streaming the video goes here
     
-    console.log(e.target.parentElement.querySelector('video'))
+    // console.log(e.target.parentElement.querySelector('video'))
       if(e.target.parentElement.querySelector('video').src !== '' ){
         document.querySelector('.video').src = e.target.parentElement.querySelector('video').src
       }
