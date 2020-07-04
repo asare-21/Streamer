@@ -4,6 +4,7 @@ import {Fetch} from './fetch.js'
 import {cfetch} from './cfectch.js'
 import {navigate} from './pages.js'
 import {description} from './pop.js'
+import {Firebase} from './cfectch.js'
 const left = document.querySelector('.left')
 const right = document.querySelector('.right')
 let count = true
@@ -75,6 +76,7 @@ const sn = document.querySelector('.side-nav')
    onscroll = checkLength
 
 window.onload = cfetch
+// window.onload = Firebase
 
 firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
@@ -85,6 +87,9 @@ firebase.auth().onAuthStateChanged(function(user) {
       window.location.replace('in.html')
     }
   });
+  
+
+ 
 
 // right.addEventListener('click',slide)
 // left.addEventListener('click',Return)

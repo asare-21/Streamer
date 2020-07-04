@@ -10,7 +10,9 @@ export const description = (e) =>{
     if(e.target.className == 'far fa-window-close'){
         document.querySelector('.movieDesDisplay').style.display = 'none'
         console.log('closed')
-       e.target.parentElement.querySelector('video').pause()
+      const vid = e.target.parentElement.querySelector('video')
+      vid.pause()
+      // localStorage.setItem('VideoLink', vide)
     }
 
   else{
