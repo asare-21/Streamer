@@ -146,7 +146,7 @@ select:focus{
 @media screen and (max-width:809px){
     .modal-content{
         width: 600px;
-        height: 400px;
+        height: auto;
         position: absolute;
         transform: translate(-43%,-50%);
     }
@@ -154,7 +154,7 @@ select:focus{
 @media screen and (max-width:680px){
     .modal-content{
         width: 500px;
-        height: 400px;
+        height: auto;
         position: absolute;
         transform: translate(-50%,-50%);
     }
@@ -176,7 +176,7 @@ select:focus{
     }
     .modal-content{
         width: 100vw;
-        height: 250px;
+        height: auto;
         position: absolute;
         transform: translate(-50%,-50%);
     }
