@@ -4,9 +4,9 @@ import {Fetch} from './fetch.js'
 import {cfetch} from './cfectch.js'
 import {navigate} from './pages.js'
 import {description} from './pop.js'
-import {Firebase} from './cfectch.js'
-const left = document.querySelector('.left')
-const right = document.querySelector('.right')
+// import {Firebase} from './cfectch.js'
+// const left = document.querySelector('.left')
+// const right = document.querySelector('.right')
 let count = true
 let c = true
 
