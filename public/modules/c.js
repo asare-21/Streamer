@@ -1,6 +1,6 @@
 var provider = new firebase.auth.GoogleAuthProvider();
 var providerf = new firebase.auth.FacebookAuthProvider();
-
+const db = firebase.firestore()
 const googleSignIn = (e) => {
     // provider.addScope('https://www.googleapis.com/auth/contacts.readonly');
     provider.addScope('email');
@@ -47,7 +47,10 @@ const fb = () => {
 firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
       // User is signed in.
-      window.location.replace('index.html')
+      db.collection('Movies_Accounts/users/accounts').doc(user.uid).set({name:'Joseph Asare'}).then(()=>{
+        window.location.replace('index.html')
+      })
+      // console.log(user.uid)
     } else {
       // No user is signed in.
     }

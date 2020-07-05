@@ -4,12 +4,13 @@ import {Fetch} from './fetch.js'
 import {cfetch} from './cfectch.js'
 import {navigate} from './pages.js'
 import {description} from './pop.js'
+import {verifyFunc} from './verify.js'
 // import {Firebase} from './cfectch.js'
 // const left = document.querySelector('.left')
 // const right = document.querySelector('.right')
 let count = true
 let c = true
-
+const db = firebase.firestore()
 //deisplay descriptions
 document.body.addEventListener('click', description)
 document.body.addEventListener('click',navigate)
@@ -78,18 +79,26 @@ const sn = document.querySelector('.side-nav')
 window.onload = cfetch
 // window.onload = Firebase
 
+
+
 firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
       // User is signed in.
-    //   window.location.replace('index.html')
+      console.log(user.displayName)
+      console.log(user.email)
+      console.log(user.photoURL)
+      document.querySelector('#name').value = user.displayName
+      document.querySelector('.picSelect img').src = user.photoURL
+      document.querySelector('#emailLink').value = user.email
+      verifyFunc()
     } else {
       // No user is signed in.
       window.location.replace('in.html')
+      verifyFunc()
     }
   });
   
 
- 
 
 // right.addEventListener('click',slide)
 // left.addEventListener('click',Return)
