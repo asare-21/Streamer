@@ -48,7 +48,7 @@ firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
       // User is signed in.
       db.collection('Movies_Accounts/users/accounts').doc(user.uid).set({}).then(()=>{
-        window.location.replace('index.html')
+        // window.location.replace('index.html')
       }).catch(error => {
         console.log(error.message)
       })

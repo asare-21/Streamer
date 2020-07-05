@@ -6,7 +6,7 @@ export const cfetch = () =>{
       client.sync({initial: true})
       .then((response) => {
         const r = response.entries
-      
+        // console.log(r)
         r.forEach(r => {
             const R = r.fields
             // console.log(R.videoLink['en-US'])
@@ -16,7 +16,10 @@ export const cfetch = () =>{
           //   document.getElementById('video').src = R.video['en-US'].fields.file['en-US'].url 
           // }
           // console.log(R.videoLink['en-US'])
-          if(R.hasOwnProperty('videoLink')){
+          if(R.hasOwnProperty('background')){
+
+          }
+         else {if(R.hasOwnProperty('videoLink')){
             
             const temp = `
             <img src=${R.image['en-US'].fields.file['en-US'].url} alt="">
@@ -57,7 +60,8 @@ export const cfetch = () =>{
             d.className = 'movie'
             d.innerHTML = temp
             document.querySelector('.movieContainer').append(d)
-            document.querySelector('.slide').append(slide)}
+            document.querySelector('.slide').append(slide)
+          }}
         })
       })
 
