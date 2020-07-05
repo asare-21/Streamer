@@ -47,10 +47,11 @@ const fb = () => {
 firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
       // User is signed in.
-      db.collection('Movies_Accounts/users/accounts').doc(user.uid).set({name:'Joseph Asare'}).then(()=>{
+      db.collection('Movies_Accounts/users/accounts').doc(user.uid).set({}).then(()=>{
         window.location.replace('index.html')
+      }).catch(error => {
+        console.log(error.message)
       })
-      // console.log(user.uid)
     } else {
       // No user is signed in.
     }

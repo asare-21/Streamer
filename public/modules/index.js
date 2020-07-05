@@ -4,10 +4,8 @@ import {Fetch} from './fetch.js'
 import {cfetch} from './cfectch.js'
 import {navigate} from './pages.js'
 import {description} from './pop.js'
-import {verifyFunc} from './verify.js'
-// import {Firebase} from './cfectch.js'
-// const left = document.querySelector('.left')
-// const right = document.querySelector('.right')
+import { verifyFunc } from './verify.js'
+
 let count = true
 let c = true
 const db = firebase.firestore()
@@ -77,28 +75,158 @@ const sn = document.querySelector('.side-nav')
    onscroll = checkLength
 
 window.onload = cfetch
-// window.onload = Firebase
+// window.onload = verifyFunc
 
 
 
 firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
       // User is signed in.
-      console.log(user.displayName)
-      console.log(user.email)
-      console.log(user.photoURL)
       document.querySelector('#name').value = user.displayName
       document.querySelector('.picSelect img').src = user.photoURL
       document.querySelector('#emailLink').value = user.email
-      verifyFunc()
     } else {
       // No user is signed in.
       window.location.replace('in.html')
-      verifyFunc()
     }
   });
   
 
+  document.getElementById('search').addEventListener('keyup',()=>{
+    console.log('Running')
 
+    if(document.getElementById('search').value == ''){
+      document.querySelector('.movieContainer').innerHTML = ''
+      var client = contentful.createClient({
+        space:'g83j5mjjg3ig',
+        accessToken:'guJQMz5h39zhGLFemZudb_AUudM5d23tf0RkNehkPXY'
+      })
+      client.sync({initial: true})
+      .then((response) => {
+        const r = response.entries
+      
+        r.forEach(r => {
+            const R = r.fields
+            // console.log(R.videoLink['en-US'])
+            // console.log(R.video['en-US'].fields.file['en-US'].url)
+       
+          // if(R.title['en-US'] == 'Triple Frontier'){
+          //   document.getElementById('video').src = R.video['en-US'].fields.file['en-US'].url 
+          // }
+          // console.log(R.videoLink['en-US'])
+          if(R.hasOwnProperty('videoLink')){
+            
+            const temp = `
+            <img src=${R.image['en-US'].fields.file['en-US'].url} alt="">
+           <p class="title" >${R.title['en-US']} <a href=${R.downloadUrl} download><i class="fas fa-cloud-download-alt"></i></a> </p>
+           
+           <p id="description" style="display:none">
+             ${R.description['en-US']}
+           </p>
+           <video src="${R.videoLink['en-US']}"  controls style="width: 100%; height: auto; display:none"></video>
+          `
+          const tem = `<img src=${R.image['en-US'].fields.file['en-US'].url} alt=""> `
+          const d = document.createElement('div')
+          const slide = document.createElement('div')
+          slide.className = 'previews'
+          slide.innerHTML = tem
+          d.className = 'movie'
+          d.innerHTML = temp
+          document.querySelector('.movieContainer').append(d)
+          document.querySelector('.slide').append(slide)
+          // console.log(d)
+
+        }
+        else{
+           const temp = `
+             <img src=${R.image['en-US'].fields.file['en-US'].url} alt="">
+            <p class="title" >${R.title['en-US']} <a href=${R.downloadUrl} download><i class="fas fa-cloud-download-alt"></i></a> </p>
+            
+            <p id="description" style="display:none">
+              ${R.description['en-US']}
+            </p>
+            <video src=""  controls style="width: 100%; height: auto; display:none"></video>
+            `
+            const tem = `<img src=${R.image['en-US'].fields.file['en-US'].url} alt=""> `
+            const d = document.createElement('div')
+            const slide = document.createElement('div')
+            slide.className = 'previews'
+            slide.innerHTML = tem
+            d.className = 'movie'
+            d.innerHTML = temp
+            document.querySelector('.movieContainer').append(d)
+            document.querySelector('.slide').append(slide)}
+        })
+      })
+
+    }
+
+
+else{
+    const client = contentful.createClient({
+     space:'g83j5mjjg3ig',
+    accessToken:'guJQMz5h39zhGLFemZudb_AUudM5d23tf0RkNehkPXY'
+      })
+      
+      client.getEntries({
+        content_type: 'product',
+        'fields.title[match]': document.getElementById('search').value
+      })
+      .then((response) => {
+        const r = response.items
+        // console.log(response.items)
+
+        r.forEach(r => {
+            const R = r.fields
+            // console.log(R)
+            document.querySelector('.movieContainer').innerHTML = ''
+          if(R.hasOwnProperty('videoLink')){
+            
+            const temp = `
+            <img src=${R.image.fields.file.url} alt="">
+           <p class="title" >${R.title} <a href=${R.downloadUrl} download><i class="fas fa-cloud-download-alt"></i></a> </p>
+           
+           <p id="description" style="display:none">
+             ${R.description['en-US']}
+           </p>
+           <video src="${R.videoLink}"  controls style="width: 100%; height: auto; display:none"></video>
+          `
+          const tem = `<img src=${R.image.fields.file.url} alt=""> `
+          const d = document.createElement('div')
+          const slide = document.createElement('div')
+          slide.className = 'previews'
+          slide.innerHTML = tem
+          d.className = 'movie'
+          d.innerHTML = temp
+          document.querySelector('.movieContainer').append(d)
+          // document.querySelector('.slide').append(slide)
+          // console.log(d)
+
+        }
+        else{
+           const temp = `
+             <img src=${R.image.fields.file.url} alt="">
+            <p class="title" >${R.title} <a href=${R.downloadUrl} download><i class="fas fa-cloud-download-alt"></i></a> </p>
+            
+            <p id="description" style="display:none">
+              ${R.description}
+            </p>
+            <video src=""  controls style="width: 100%; height: auto; display:none"></video>
+            `
+            const tem = `<img src=${R.image.fields.file.url} alt=""> `
+            const d = document.createElement('div')
+            const slide = document.createElement('div')
+            slide.className = 'previews'
+            slide.innerHTML = tem
+            d.className = 'movie'
+            d.innerHTML = temp
+            document.querySelector('.movieContainer').append(d)
+            // document.querySelector('.slide').append(slide)
+          }
+        })
+      })
+      .catch(console.error)
+    }
+})
 // right.addEventListener('click',slide)
 // left.addEventListener('click',Return)

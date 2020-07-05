@@ -1,3 +1,5 @@
+let state = true
+
 export const navigate = (e) => {
     //function to listen for clicks on the buttons
     if(e.target.className == 'fas fa-home'){
@@ -28,6 +30,18 @@ export const navigate = (e) => {
           }).catch(function(error) {
             // An error happened.
           });
+        }
+    else if(e.target.className == 'fas fa-search' || e.target.className == 'search' || e.target.className == 'closeSearch' || e.target.className == 'far fa-window-close 5'){
+        document.querySelector('.searchModal').classList.toggle('open')
+        if(state){
+            document.querySelector('.burgerContainer').style.display = 'none'
+            state = false
+        }
+        else{
+            document.querySelector('.burgerContainer').style.display = 'flex'
+            state = true 
+        }
+        // document.querySelector('.fas fa-arrow').disabled = true
     }
     
 }

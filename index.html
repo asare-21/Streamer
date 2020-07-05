@@ -26,15 +26,14 @@
             <div class="navigation">
                <div> <i class="fas fa-home"></i><p>Home</p></div>
                <div> <i class="fas fa-user"></i><p>Profile</p></div>
-               <div><i class="fas fa-cogs"></i><p>Settings</p></div> 
-               <div><i class="fas fa-cloud-download-alt"></i><p>Downloads</p></div> 
-               <div><i class="far fa-envelope"></i><p>About</p></div> 
+               <div> <i class="fas fa-search"></i><p class="search"></p></div>
+               <!-- <div><i class="fas fa-cogs"></i><p>Settings</p></div>  -->
+               <!-- <div><i class="fas fa-cloud-download-alt"></i><p>Downloads</p></div>  -->
+               <!-- <div><i class="far fa-envelope"></i><p>About</p></div>  -->
                <div class="door"><i class="fas fa-door-open"></i><p class="p">Sign Out</p></div> 
 
                 <h5>Categories</h5>
                <div class="category">
-               <br>
-               <br>
                 <i class="fas fa-book-open"></i>
 
                 <li>Action</li>
@@ -134,7 +133,17 @@
                 <video src="" class="video" id="video" controls style="width: 100%; height: auto;"></video>
             </div>
 
-     
+            <div class="searchModal">
+                <div class="closeSearch"
+                style="width: 10%;
+                height: 30px;
+                position: absolute;
+                top: 5%; right: 5%;"> <i class="far fa-window-close 5" style="height: 20px;
+                    width: 95%; color: rgb(228, 35, 35);   display: flex;
+                    justify-content: flex-end;
+                    align-items: center;"></i></div>
+                <input type="text" name="" placeholder="Search" id="search" maxlength="30">
+            </div>
     </section>
 
 

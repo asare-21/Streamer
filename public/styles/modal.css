@@ -203,3 +203,42 @@ select:focus{
     }
 }
 
+
+.searchModal{
+    width: 100%;
+    height: 300px;
+    background:linear-gradient(to right, rgb(15, 32, 39), rgb(32, 58, 67), rgb(44, 83, 100));
+    position: fixed;
+    top: 0%;
+    left: 50%;
+    transform: translate(-50%);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    z-index: 15;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.12), 
+    0 2px 2px rgba(0,0,0,0.12), 
+    0 4px 4px rgba(0,0,0,0.12), 
+    0 8px 8px rgba(0,0,0,0.12),
+    0 16px 16px rgba(0,0,0,0.12);
+}
+.searchModal.open{
+    display: flex;
+}
+.searchModal input{
+    width: 80%;
+    height: 50px;
+    font-size: 16px;
+    padding: 0 10px 0 10px;
+    border-radius: 10px;
+}
+.searchModal input:focus{
+    border: 2px solid rgb(33, 182, 33);
+    outline: none;
+}
+.searchModal input::placeholder{
+    text-align: center;
+    font-size: 16px;
+}
+
