@@ -23,7 +23,7 @@ body.toggle{
 }
 .modal-content{
     width: 800px;
-    height: auto;
+    height: 500px;
     background:linear-gradient(to right, rgb(15, 32, 39), rgb(32, 58, 67), rgb(44, 83, 100));
     position: fixed;
     z-index:10;
@@ -146,7 +146,7 @@ select:focus{
 @media screen and (max-width:809px){
     .modal-content{
         width: 600px;
-        height: auto;
+        min-height: 400px;
         position: absolute;
         transform: translate(-43%,-50%);
     }
@@ -154,7 +154,7 @@ select:focus{
 @media screen and (max-width:680px){
     .modal-content{
         width: 500px;
-        height: auto;
+        min-height: 400px;
         position: absolute;
         transform: translate(-50%,-50%);
     }
@@ -170,13 +170,13 @@ select:focus{
 }
 @media screen and (max-width:450px){
     .detailsHold{
-        height: 10vh;
+        min-height: 10vh;
         position: absolute;
         bottom: 0;
     }
     .modal-content{
         width: 100vw;
-        height: auto;
+        min-height: 250px;
         position: absolute;
         transform: translate(-50%,-50%);
     }
