@@ -176,6 +176,9 @@ i{
         display: flex;
         z-index: 10;
     }
+    .side-nav{
+        overflow: initial;
+    }
     .navigation{
         height: 0px;  
         width: 100%;
