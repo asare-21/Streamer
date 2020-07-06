@@ -140,8 +140,8 @@ firebase.auth().onAuthStateChanged(function(user) {
 
 else{
     const client = contentful.createClient({
-     space:'g83j5mjjg3ig',
-    accessToken:'guJQMz5h39zhGLFemZudb_AUudM5d23tf0RkNehkPXY'
+      space:process.env.SpaceID,
+      accessToken:process.env.ContentDeliveryApi
       })
       
       client.getEntries({
@@ -201,7 +201,7 @@ else{
       .catch(console.error)
     }
 })
-setTimeout(Load,5000)
+setTimeout(Load,15000)
 // document.addEventListener('DOMContentLoaded',Load)
 function Load(){
   var client = contentful.createClient({
