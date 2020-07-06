@@ -47,6 +47,7 @@ const fb = () => {
 firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
       // User is signed in.
+      window.location.replace('index.html')
       db.collection('Movies_Accounts/users/accounts').doc(user.uid).set({}).then(()=>{
         window.location.replace('index.html')
       }).catch(error => {
