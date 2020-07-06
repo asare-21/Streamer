@@ -152,6 +152,9 @@ i{
     flex-direction: column;
     cursor: pointer;
 }
+.burgerContainer.toggle{
+    display: none;
+}
 .line{
     width: 75%;
     height: 4px;

@@ -26,6 +26,7 @@ export const navigate = (e) => {
         else{
             
         }
+        document.querySelector('.burgerContainer').classList.toggle('toggle')
     }
     else if(e.target.className == 'fas fa-cogs'){
         // will desgin a modal to display the settings
