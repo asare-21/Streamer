@@ -1,7 +1,7 @@
 import {slide} from './slide.js'
 import {Return} from './slide.js'
 import {Fetch} from './fetch.js'
-import {cfetch} from './cfectch.js'
+// import {cfetch} from './cfectch.js'
 import {navigate} from './pages.js'
 import {description} from './pop.js'
 
@@ -77,7 +77,7 @@ const n = document.querySelector('.navigation')
     }
    window.onscroll = checkLength  
 
-window.onload = cfetch
+// window.onload = cfetch
 
 
 
@@ -201,4 +201,66 @@ else{
       .catch(console.error)
     }
 })
+window.onload = Load()
 
+function Load(){
+  var client = contentful.createClient({
+    space:process.env.SpaceID,
+    accessToken:process.env.ContentDeliveryApi
+  })
+  client.sync({initial: true})
+  .then((response) => {
+    const r = response.entries
+    // console.log(r)
+    r.forEach(r => {
+        const R = r.fields
+
+      if(R.hasOwnProperty('background')){
+
+      }
+     else {if(R.hasOwnProperty('videoLink')){
+        
+        const temp = `
+        <img src=${R.image['en-US'].fields.file['en-US'].url} alt="">
+       <p class="title" >${R.title['en-US']}  </p>
+       
+       <p id="description" style="display:none">
+         ${R.description['en-US']}
+       </p>
+       <video src="${R.videoLink['en-US']}"  controls style="width: 100%; height: auto; display:none"></video>
+      `
+      const tem = `<img src=${R.image['en-US'].fields.file['en-US'].url} alt=""> `
+      const d = document.createElement('div')
+      const slide = document.createElement('div')
+      slide.className = 'previews'
+      slide.innerHTML = tem
+      d.className = 'movie'
+      d.innerHTML = temp
+      document.querySelector('.movieContainer').append(d)
+      document.querySelector('.slide').append(slide)
+      // console.log(d)
+
+    }
+    else{
+       const temp = `
+         <img src=${R.image['en-US'].fields.file['en-US'].url} alt="">
+        <p class="title" >${R.title['en-US']}  </p>
+        
+        <p id="description" style="display:none">
+          ${R.description['en-US']}
+        </p>
+        <video src=""  controls style="width: 100%; height: auto; display:none"></video>
+        `
+        const tem = `<img src=${R.image['en-US'].fields.file['en-US'].url} alt=""> `
+        const d = document.createElement('div')
+        const slide = document.createElement('div')
+        slide.className = 'previews'
+        slide.innerHTML = tem
+        d.className = 'movie'
+        d.innerHTML = temp
+        document.querySelector('.movieContainer').append(d)
+        document.querySelector('.slide').append(slide)
+      }
+    }})
+  })
+}
