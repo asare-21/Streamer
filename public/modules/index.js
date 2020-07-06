@@ -34,19 +34,6 @@ document.querySelector('.burgerContainer').addEventListener('click',(e)=> {
             i.style.display = 'flex'
         })
       }
-       //////////////
-
-      //  if(screen.width < 600){
-      //   document.querySelector('.burgerContainer').classList.toggle('toggle')
-      //  }
-
-      //  document.querySelectorAll('.line').forEach(line =>{
-      //      line.classList.toggle('animate')
-      //  })
-      //  document.querySelectorAll('p').forEach(p => {
-      //      p.classList.toggle('show')
-      //  })
-
    }
   
 }
@@ -55,7 +42,7 @@ document.querySelector('.burgerContainer').addEventListener('click',(e)=> {
 const sn = document.querySelector('.side-nav')
 const n = document.querySelector('.navigation')
     function checkLength (){
-       if(pageYOffset > 150){
+       if(pageYOffset > 250){
            sn.style.background = `white`
            n.style.background = `white`
            sn.style.transition = 'all 0.5s linear'
@@ -69,7 +56,7 @@ const n = document.querySelector('.navigation')
              line.style.backgroundColor = 'black'
            })
            document.querySelector('.account-modal').style.top = `${pageYOffset}px`
-           document.querySelector('.movieContainer').style.top = `${pageYOffset}px`
+           document.querySelector('.movieDesDisplay').style.top = `${pageYOffset - 100}px`
     } 
     else{
       sn.style.transition = 'all 0.8s linear'
@@ -85,7 +72,7 @@ const n = document.querySelector('.navigation')
         p.style.color = 'white'
       })
       document.querySelector('.account-modal').style.top = `${pageYOffset}px`
-      document.querySelector('.movieContainer').style.top = `${pageYOffset}px`
+      document.querySelector('.movieDesDisplay').style.top = `${pageYOffset - 100}px`
     }
     }
    window.onscroll = checkLength  
@@ -108,7 +95,7 @@ firebase.auth().onAuthStateChanged(function(user) {
   
 
   document.getElementById('search').addEventListener('keyup',()=>{
-    console.log('Running')
+    // console.log('Running')
 
     if(document.getElementById('search').value == ''){
       document.querySelector('.movieContainer').innerHTML = ''
@@ -126,7 +113,7 @@ firebase.auth().onAuthStateChanged(function(user) {
             
             const temp = `
             <img src=${R.image['en-US'].fields.file['en-US'].url} alt="">
-           <p class="title" >${R.title['en-US']} <a href=${R.downloadUrl} download><i class="fas fa-cloud-download-alt"></i></a> </p>
+           <p class="title" >${R.title['en-US']}  </p>
            
            <p id="description" style="display:none">
              ${R.description['en-US']}
@@ -188,9 +175,6 @@ else{
           d.className = 'movie'
           d.innerHTML = temp
           document.querySelector('.movieContainer').append(d)
-          // document.querySelector('.slide').append(slide)
-          // console.log(d)
-
         }
         else{
            const temp = `
@@ -217,5 +201,4 @@ else{
       .catch(console.error)
     }
 })
-// right.addEventListener('click',slide)
-// left.addEventListener('click',Return)
+

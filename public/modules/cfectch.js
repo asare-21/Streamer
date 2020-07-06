@@ -23,7 +23,7 @@ export const cfetch = () =>{
             
             const temp = `
             <img src=${R.image['en-US'].fields.file['en-US'].url} alt="">
-           <p class="title" >${R.title['en-US']} <a href=${R.downloadUrl} download><i class="fas fa-cloud-download-alt"></i></a> </p>
+           <p class="title" >${R.title['en-US']}  </p>
            
            <p id="description" style="display:none">
              ${R.description['en-US']}
@@ -45,7 +45,7 @@ export const cfetch = () =>{
         else{
            const temp = `
              <img src=${R.image['en-US'].fields.file['en-US'].url} alt="">
-            <p class="title" >${R.title['en-US']} <a href=${R.downloadUrl} download><i class="fas fa-cloud-download-alt"></i></a> </p>
+            <p class="title" >${R.title['en-US']}  </p>
             
             <p id="description" style="display:none">
               ${R.description['en-US']}

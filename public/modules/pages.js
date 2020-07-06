@@ -13,7 +13,7 @@ export const navigate = (e) => {
         let f = true
         document.querySelector('.account-modal').classList.toggle('toggle')
         document.body.classList.toggle('toggle')
-        if(screen.width < 480){
+        if(screen.width < 550){
             if(state){
                 document.querySelector('.navigation').classList.toggle('show')
                 state = false
@@ -43,35 +43,23 @@ export const navigate = (e) => {
             // Sign-out successful.
           }).catch(function(error) {
             // An error happened.
+            console.error
           });
         }
     else if(e.target.className == 'fas fa-search' || e.target.className == 'search' || e.target.className == 'closeSearch' || e.target.className == 'far fa-window-close 5'){
         document.querySelector('.searchModal').classList.toggle('open')
-        // if(state){
-        //     document.querySelector('.burgerContainer').style.display = 'none'
-        //     state = false
-        // }
-        // else{
-        //     document.querySelector('.burgerContainer').style.display = 'flex'
-        //     state = true 
-        // }
-        // document.querySelector('.fas fa-arrow').disabled = true
+        // document.querySelector('.navigation').classList.toggle('show')
+        if(state){
+            document.querySelector('.navigation').classList.toggle('show')
+            state = false
+        }
+        else{
+            document.querySelector('.navigation').classList.remove('show')
+            state = true
+        }
     }
     else if(e.target.className == 'burgerContainer' || e.target.className == 'line'){
         document.querySelector('.navigation').classList.toggle('show')
-        // if(stateM){
-        //     document.querySelectorAll('.movie').forEach(movie => { 
-        //         movie.disabled = true
-        //         stateM = false
-        //     })
-        // }
-        // else{
-        //     document.querySelectorAll('.movie').forEach(movie => { 
-        //         movie.disabled = false
-        //         stateM = true
-        //     })
-        // }
-
     }
     
 }
