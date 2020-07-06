@@ -1,9 +1,9 @@
-import {slide} from './slide.js'
-import {Return} from './slide.js'
-import {Fetch} from './fetch.js'
+import {slide} from './slide-min.js'
+import {Return} from './slide-min.js'
+import {Fetch} from './fetch-min.js'
 // import {cfetch} from './cfectch.js'
-import {navigate} from './pages.js'
-import {description} from './pop.js'
+import {navigate} from './pages-min.js'
+import {description} from './pop-min.js'
 
 
 let count = true

@@ -2,3 +2,13 @@
 node_modules/
 # Local Netlify folder
 .netlify
+index.js
+c.js
+cfetch.js
+pages.js
+pop.js
+slide.js
+fetch.js
+modal.css
+style.css
+pop.css
