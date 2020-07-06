@@ -201,7 +201,7 @@ else{
       .catch(console.error)
     }
 })
-window.onloadeddata = Load()
+// window.onloadeddata = Load()
 
 function Load(){
   var client = contentful.createClient({
