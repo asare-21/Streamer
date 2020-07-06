@@ -9,13 +9,7 @@ export const cfetch = () =>{
         // console.log(r)
         r.forEach(r => {
             const R = r.fields
-            // console.log(R.videoLink['en-US'])
-            // console.log(R.video['en-US'].fields.file['en-US'].url)
-       
-          // if(R.title['en-US'] == 'Triple Frontier'){
-          //   document.getElementById('video').src = R.video['en-US'].fields.file['en-US'].url 
-          // }
-          // console.log(R.videoLink['en-US'])
+
           if(R.hasOwnProperty('background')){
 
           }
