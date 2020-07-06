@@ -100,8 +100,8 @@ firebase.auth().onAuthStateChanged(function(user) {
     if(document.getElementById('search').value == ''){
       document.querySelector('.movieContainer').innerHTML = ''
       var client = contentful.createClient({
-        space:'g83j5mjjg3ig',
-        accessToken:'guJQMz5h39zhGLFemZudb_AUudM5d23tf0RkNehkPXY'
+        space:process.env.SpaceID,
+        accessToken:process.env.ContentDeliveryApi
       })
       client.sync({initial: true})
       .then((response) => {
