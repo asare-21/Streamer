@@ -6,9 +6,21 @@
     border: none;
     font-family: 'Source Sans Pro', sans-serif;
 }
-body{
-    /* overflow: hidden; */
-    background:linear-gradient(to right, rgb(15, 32, 39), rgb(32, 58, 67), rgb(44, 83, 100));
+html,body{
+    overflow-x: hidden;
+    background:var(--background);
+    height: 100%;
+    width: 100vw;
+    background: #141E30;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #243B55, #141E30);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #243B55, #141E30); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */    
+}
+:root{
+    --boxShadow: 0 1px 1px rgba(0,0,0,0.15), 
+    0 2px 2px rgba(0,0,0,0.15), 
+    0 4px 4px rgba(0,0,0,0.15), 
+    0 8px 8px rgba(0,0,0,0.15);
+    --background:linear-gradient(to right, #243B55, #141E30);
 }
 ::-webkit-scrollbar {
     width: 12px;
@@ -17,29 +29,26 @@ body{
 ::-webkit-scrollbar-track {
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
     box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
-    border-radius: 10px;
+    /* border-radius: 10px; */
 }
  
 ::-webkit-scrollbar-thumb {
-    border-radius: 10px;
+    /* border-radius: 10px; */
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
     box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
 }
 .side-nav{
-    height: 100vh ;
-    width: 83px;
-    background:linear-gradient(to right, rgb(15, 32, 39), rgb(32, 58, 67), rgb(44, 83, 100));
-    position: absolute;
+    height: 50px ;
+    width: 100%;
+    background:var(--background);
+    position: fixed;
     left: 0;
     top: 0;
     transition: all 0.5s linear;
     z-index: 10;
+    box-shadow: var(--boxShadow);
 }
-.side-nav.toggle{
-    width: 400px;
-    transition: all 0.5s linear;
-    transition: all 0.5s linear;
-}
+
 h5{
     color: white;
     text-decoration: underline;
@@ -51,13 +60,13 @@ h5{
     display: flex;
     justify-content: center;
     align-items: center;
-    visibility: hidden;
+    /* visibility: hidden; */
 }
 h5.toggle{
     font-size: 16px;
     visibility: visible;
 }
-.category{
+/* .category{
     width: 100%;
     height: auto;
     display: flex;
@@ -81,9 +90,9 @@ h5.toggle{
     text-align:center;
     cursor: pointer;
     transition: all 0.2s linear;
-    visibility: hidden;
+    /* visibility: hidden; */
     /* font-size: 18px; */
-}
+ */
 .category li.toggle{
     visibility: visible;
 }
@@ -91,32 +100,33 @@ h5.toggle{
     color: royalblue;
 }
 .navigation{
-    height:300px;
-    width: 100%;
+    height:100%;
+    width: 50%;
     position: absolute;
-    left: 0;
-    top: 70px;
+    top: 0;
+    right: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    padding: 0 12px 0 12px;
+    padding: 10px 12px 10px 12px;
 }
 .navigation > div{
     width: 100%;
-    height: 60px;
+    height: 100%;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     color: white;
 }
+.navigation i{
+    color: black; 
+}
 .navigation > div p{
     height: 100%;
     width: 100%;
-    display: none;
+    display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 20px;
     cursor: pointer;
 }
 .navigation > div p.show{
@@ -134,9 +144,9 @@ i{
     width: 50px;
     height: 45px;
     position: absolute;
-    left: 10px;
-    top: 10px;
-    display: flex;
+    right: 5px;
+    top: 0px;
+    display: none;
     justify-content: center;
     align-items: center;
     flex-direction: column;
@@ -151,61 +161,58 @@ i{
     cursor: pointer;
     position: relative;
 }
-.line.animate:nth-child(1){
-    transform: rotate(30deg);
-    transition: all 0.5s linear;
-}
-.line:nth-child(1){
-    transform: rotate(0deg);
-    transition: all 0.5s linear;
-}
-.line.animate:nth-child(3){
-    transform: rotate(-30deg);
-    transition: all 0.5s linear;
-}
-.line:nth-child(3){
-    transform: rotate(0deg);
-    transition: all 0.5s linear;
-}
+
 /* media queries */
-@media screen and (max-width:480px){
-    .side-nav{
-        width: 50px;
-    }
-    .side-nav.toggle{
-        width: 100vw;
-    }
+@media screen and (max-width:550px){
     .burgerContainer{
-        left: 25px;
-        transform: translate(-50%);
-    }
-    .burgerContainer.toggle{
-        left: 25px;
-    }
-    .navigation > div p{
+        position: absolute;
+        right: 5px;
+        top: 0;
         height: 100%;
-        width: auto;
-        display: none;
+        display: flex;
+        z-index: 10;
+    }
+    .navigation{
+        height: 0px;  
+        width: 100%;
+        background: var(--background);
+        display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
-        font-size: 20px;
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%);
+        box-shadow: var(--boxShadow);
+        transition: all 0.5s ease;
+        visibility: hidden;  
     }
-    .navigation > div p.show{
-        display: flex;
+    .navigation.show{
+        height: 400px;
+        transition: all 0.5s ease-in;
+        padding: 10px 0 0 0;
+        visibility: visible;
     }
-}
+    .navigation p{
+        visibility: hidden;
+    }
+    .navigation.show p{
+        height: 50px;
+        visibility: visible;
+    }
+    
+    }
+
+
 
 
 /* Slider styles */
 .slider{
-    height: 400px;
-    width:90vw;
+    height: 390px;
+    width:100%;
     position: absolute;
-    top: 0;
+    top: 30px;
     right:0;
-    /* float: left; */
-    /* display: block; */
-    flex-direction: column;
     padding: 10px 0 10px 0;
     overflow: hidden;
     overflow-x: scroll;
@@ -222,7 +229,7 @@ i{
 }
 .previews{
     height: 100%;
-    width: 250px;
+    width: 240px;
     margin: 10px;
 }
 .previews img{
@@ -253,7 +260,7 @@ i{
 @media screen and (max-width: 600px){
    .slider{
        height: 300px;
-       width: 87vw;
+       width: 100%;
    }
    .right , .left {
        top: 19px;
@@ -271,13 +278,13 @@ i{
 
 /* Movies */
 .movies-container{
-    width: 94vw;
+    width: 100%;
     height: auto;
     position: absolute;
-    right: 0;
+    left: 50%;
     top: 400px;
     padding: 10px 10px 10px 10px;
-    margin: 0 0 0 15px;
+    transform: translate(-50%);
 }
 nav{
     height: 130px;
@@ -286,7 +293,7 @@ nav{
     display: flex;
     border-radius: 10px;
     border: 1px solid white;
-    padding: 5px 5px 5px;
+    /* padding: 5px 5px 5px; */
     flex-wrap: wrap; 
 }
 nav li{
@@ -297,29 +304,25 @@ nav li{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 5px 5px 5px 5px;
     box-shadow: 0 1px 1px rgba(0,0,0,0.15), 
     0 2px 2px rgba(0,0,0,0.15), 
     0 4px 4px rgba(0,0,0,0.15), 
     0 8px 8px rgba(0,0,0,0.15);
 }
 .movies-container{
-        /* overflow-y: scroll; */
         position: absolute;
         right: 0;
         top:400px;
-        width: 94vw;
+        width: 100%;
         min-height: 60vh;
-        padding: 0 10px 0 10px;
 }
 .movieContainer{
-    /* overflow-y: scroll; */
     position: absolute;
-    right: 0;
-    top:120px;
+    left: 50%;
+    top:200px;   
+    transform: translate(-50%);        
     width: 100%;
     min-height: 60vh;
-    padding: 0 10px 0 10px;
 }
 .movie{
     width: 200px;
@@ -328,7 +331,8 @@ nav li{
     border-radius:10px;
     padding: 5px 5px 5px 5px;
     float:left;
-    margin: 5px 5px 5px 5px;
+    margin: 8px 8px 8px 8px ;
+
 }
 .movie img{
     height: 270px;
@@ -349,10 +353,10 @@ nav li{
 .movieContainer i:hover{
     color: royalblue;
 }
-@media screen and (min-width:850px){
+@media screen and (min-width:800px){
     .movies-container{
         top: 400px;
-        width: 92vw;
+        width: 100%;
     }
     nav{
         width:99%;
@@ -360,14 +364,13 @@ nav li{
     }
     .movieContainer{
         width: 100%;
-        padding: 0 20px 0 20px;
-        top: 10px;
+        top: 30px;
     }
 }
 @media screen and (max-width:850px){
     .movies-container{
         top: 400px;
-        width: 85vw;
+        width: 100%;
     }
     nav{
         width:99%;
@@ -376,17 +379,16 @@ nav li{
     }
     .movieContainer{
         width: 100%;
-        padding: 0 20px 0 20px;
         top: 10px;
     }
 }
 @media screen and (max-width:600px){
     .movies-container{
         top: 300px;
-        width: 85vw;
+        width: 100%;
     }
     nav{
-        width:99%;
+        width:100%;
         overflow: hidden;
         overflow-y: scroll;
     }
@@ -399,19 +401,23 @@ nav li{
        display: grid;
        grid-template-columns:50% 50%;
         top: 10px;
+        align-items: center;
+        justify-content: center;
     }
     .movie{
         height: 350px;
-        width: 185px;
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
     }
 }
 @media screen and (max-width:480px){
     .movies-container{
         top: 300px;
-        width: 89vw;
+        width: 100%;
     }
     nav{
-        width:99%;
+        width:100%;
         overflow: hidden;
         overflow-y: scroll;
     }
@@ -421,23 +427,22 @@ nav li{
     }
     .movieContainer{
         width: 100%;
-        /* padding: 0 10px 0 10px; */
         top: 10px;
-        /* float: left; */
         margin: 5px 5px 5px 5px;
-        padding: 0 !important;
+        padding: 0;
     }
     .movie{
+        width: 90%;
         margin: 10px 10px 10px 10px;
     }
 }
 @media screen and (max-width:451px){
     .movies-container{
         top: 300px;
-        width: 89vw;
+        width: 100%;
     }
     nav{
-        width:99%;
+        width:100%;
         overflow: hidden;
         overflow-y: scroll;
     }
@@ -447,15 +452,16 @@ nav li{
     }
     .movieContainer{
         width: 100%;
-        top: 10px;
+        top: 20px;
         display: grid;
-        grid-template-columns: 100%;
-        
+        /* grid-template-columns: 100%; */
     }
     .movie{
         margin: 10px 10px 10px 10px;
-        width: 70%;
-        height: 340px;
-        transform: translateX(48px);
+        width: 100%;
+        height: 330px;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 13px;
     }
 }

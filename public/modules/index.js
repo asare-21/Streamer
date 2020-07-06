@@ -17,7 +17,7 @@ document.querySelector('.burgerContainer').addEventListener('click',(e)=> {
    
    if(e.target.classList.contains('line') || e.target.classList.contains('burgerContainer') ||e.target.classList.contains('fa-arrow-right')){
        document.querySelector('.side-nav').classList.toggle('toggle')
-       document.querySelector('h5').classList.toggle('toggle')
+      //  document.querySelector('h5').classList.toggle('toggle')
        document.querySelectorAll('.category li').forEach(cat => {
            cat.classList.toggle('toggle')
        })
@@ -36,46 +36,59 @@ document.querySelector('.burgerContainer').addEventListener('click',(e)=> {
       }
        //////////////
 
-       if(screen.width < 600){
-        document.querySelector('.burgerContainer').classList.toggle('toggle')
-       }
+      //  if(screen.width < 600){
+      //   document.querySelector('.burgerContainer').classList.toggle('toggle')
+      //  }
 
-       document.querySelectorAll('.line').forEach(line =>{
-           line.classList.toggle('animate')
-       })
-       document.querySelectorAll('p').forEach(p => {
-           p.classList.toggle('show')
-       })
-       const l = document.querySelector('.burgerContainer')
-       if(count){
-           l.innerHTML = ` <div class="line"></div>
-           <div class="line"></div>
-           <div class="line"></div>`
-           count = false
-       }
-       else{
-        l.innerHTML = `<i class="fas fa-arrow-right"></i>`
-           count = true
-       }
+      //  document.querySelectorAll('.line').forEach(line =>{
+      //      line.classList.toggle('animate')
+      //  })
+      //  document.querySelectorAll('p').forEach(p => {
+      //      p.classList.toggle('show')
+      //  })
+
    }
   
 }
 )
 //making sure the side nav is always of lenght
 const sn = document.querySelector('.side-nav')
+const n = document.querySelector('.navigation')
     function checkLength (){
-       if(pageYOffset > 100){
-           sn.style.height = `${pageYOffset+10}vh`
+       if(pageYOffset > 150){
+           sn.style.background = `white`
+           n.style.background = `white`
+           sn.style.transition = 'all 0.5s linear'
+           document.querySelectorAll('.side-nav p').forEach(p => {
+             p.style.color = 'black'
+           })
+           document.querySelectorAll('.navigation p').forEach(p => {
+             p.style.color = 'black'
+           })
+           document.querySelectorAll('.line').forEach(line => {
+             line.style.backgroundColor = 'black'
+           })
+           document.querySelector('.account-modal').style.top = `${pageYOffset}px`
     } 
     else{
-        sn.style.height = `${100}vh`
-
+      sn.style.transition = 'all 0.8s linear'
+      n.style.background = `linear-gradient(to right, rgb(15, 32, 39), rgb(32, 58, 67), rgb(44, 83, 100))`
+      sn.style.background = `linear-gradient(to right, rgb(15, 32, 39), rgb(32, 58, 67), rgb(44, 83, 100))`
+      document.querySelectorAll('.side-nav p').forEach(p => {
+        p.style.color = 'white'
+      })
+      document.querySelectorAll('.line').forEach(line => {
+        line.style.backgroundColor = 'white'
+      })
+      document.querySelectorAll('.navigation p').forEach(p => {
+        p.style.color = 'white'
+      })
+      document.querySelector('.account-modal').style.top = `${pageYOffset}px`
     }
     }
-   onscroll = checkLength
+   window.onscroll = checkLength  
 
 window.onload = cfetch
-// window.onload = verifyFunc
 
 
 
@@ -107,13 +120,6 @@ firebase.auth().onAuthStateChanged(function(user) {
       
         r.forEach(r => {
             const R = r.fields
-            // console.log(R.videoLink['en-US'])
-            // console.log(R.video['en-US'].fields.file['en-US'].url)
-       
-          // if(R.title['en-US'] == 'Triple Frontier'){
-          //   document.getElementById('video').src = R.video['en-US'].fields.file['en-US'].url 
-          // }
-          // console.log(R.videoLink['en-US'])
           if(R.hasOwnProperty('videoLink')){
             
             const temp = `
@@ -137,25 +143,6 @@ firebase.auth().onAuthStateChanged(function(user) {
           // console.log(d)
 
         }
-        else{
-           const temp = `
-             <img src=${R.image['en-US'].fields.file['en-US'].url} alt="">
-            <p class="title" >${R.title['en-US']} <a href=${R.downloadUrl} download><i class="fas fa-cloud-download-alt"></i></a> </p>
-            
-            <p id="description" style="display:none">
-              ${R.description['en-US']}
-            </p>
-            <video src=""  controls style="width: 100%; height: auto; display:none"></video>
-            `
-            const tem = `<img src=${R.image['en-US'].fields.file['en-US'].url} alt=""> `
-            const d = document.createElement('div')
-            const slide = document.createElement('div')
-            slide.className = 'previews'
-            slide.innerHTML = tem
-            d.className = 'movie'
-            d.innerHTML = temp
-            document.querySelector('.movieContainer').append(d)
-            document.querySelector('.slide').append(slide)}
         })
       })
 

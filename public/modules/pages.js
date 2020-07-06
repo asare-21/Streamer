@@ -1,18 +1,31 @@
 let state = true
+let stateM = true
 
 export const navigate = (e) => {
     //function to listen for clicks on the buttons
-    if(e.target.className == 'fas fa-home'){
+    if(e.target.className == 'home'){
         window.location.replace('index.html')
 
     }
-    else if(e.target.className == 'fas fa-user' || e.target.className == 'close' || e.target.className == 'lin') {
+    else if( e.target.className == 'profile' || e.target.className == 'close' || e.target.className == 'lin') {
         //we will display a modal when the user button is clicked
         // this modal will allow the user set a profile picture, account name and choose their favorite movie categories
         let f = true
         document.querySelector('.account-modal').classList.toggle('toggle')
-
         document.body.classList.toggle('toggle')
+        if(screen.width < 480){
+            if(state){
+                document.querySelector('.navigation').classList.toggle('show')
+                state = false
+            }
+            else{
+                document.querySelector('.navigation').classList.remove('show')
+                state = true
+            }
+        }
+        else{
+            
+        }
     }
     else if(e.target.className == 'fas fa-cogs'){
         // will desgin a modal to display the settings
@@ -23,7 +36,7 @@ export const navigate = (e) => {
         //code here to display notifications or messages received from us
         window.location.replace('inbox.html')
     }
-    else if(e.target.className == 'fas fa-door-open' || e.target.className == 'door' || e.target.classList.contains('p')){
+    else if(e.target.classList.contains('signout')){
         //logout
         firebase.auth().signOut().then(function() {
             // Sign-out successful.
@@ -33,15 +46,31 @@ export const navigate = (e) => {
         }
     else if(e.target.className == 'fas fa-search' || e.target.className == 'search' || e.target.className == 'closeSearch' || e.target.className == 'far fa-window-close 5'){
         document.querySelector('.searchModal').classList.toggle('open')
-        if(state){
-            document.querySelector('.burgerContainer').style.display = 'none'
-            state = false
-        }
-        else{
-            document.querySelector('.burgerContainer').style.display = 'flex'
-            state = true 
-        }
+        // if(state){
+        //     document.querySelector('.burgerContainer').style.display = 'none'
+        //     state = false
+        // }
+        // else{
+        //     document.querySelector('.burgerContainer').style.display = 'flex'
+        //     state = true 
+        // }
         // document.querySelector('.fas fa-arrow').disabled = true
+    }
+    else if(e.target.className == 'burgerContainer' || e.target.className == 'line'){
+        document.querySelector('.navigation').classList.toggle('show')
+        // if(stateM){
+        //     document.querySelectorAll('.movie').forEach(movie => { 
+        //         movie.disabled = true
+        //         stateM = false
+        //     })
+        // }
+        // else{
+        //     document.querySelectorAll('.movie').forEach(movie => { 
+        //         movie.disabled = false
+        //         stateM = true
+        //     })
+        // }
+
     }
     
 }
