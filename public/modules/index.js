@@ -69,6 +69,7 @@ const n = document.querySelector('.navigation')
              line.style.backgroundColor = 'black'
            })
            document.querySelector('.account-modal').style.top = `${pageYOffset}px`
+           document.querySelector('.movieContainer').style.top = `${pageYOffset}px`
     } 
     else{
       sn.style.transition = 'all 0.8s linear'
@@ -84,6 +85,7 @@ const n = document.querySelector('.navigation')
         p.style.color = 'white'
       })
       document.querySelector('.account-modal').style.top = `${pageYOffset}px`
+      document.querySelector('.movieContainer').style.top = `${pageYOffset}px`
     }
     }
    window.onscroll = checkLength  
