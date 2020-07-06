@@ -201,8 +201,7 @@ else{
       .catch(console.error)
     }
 })
-// window.onloadeddata = Load()
-
+setTimeout(Load,1000)
 function Load(){
   var client = contentful.createClient({
     space:process.env.SpaceID,
