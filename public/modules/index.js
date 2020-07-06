@@ -100,8 +100,8 @@ firebase.auth().onAuthStateChanged(function(user) {
     if(document.getElementById('search').value == ''){
       document.querySelector('.movieContainer').innerHTML = ''
       var client = contentful.createClient({
-        space:process.env.SpaceID,
-        accessToken:process.env.ContentDeliveryApi
+        space:'g83j5mjjg3ig',
+        accessToken:'guJQMz5h39zhGLFemZudb_AUudM5d23tf0RkNehkPXY'
       })
       client.sync({initial: true})
       .then((response) => {
@@ -140,8 +140,8 @@ firebase.auth().onAuthStateChanged(function(user) {
 
 else{
     const client = contentful.createClient({
-      space:process.env.SpaceID,
-      accessToken:process.env.ContentDeliveryApi
+     space:'g83j5mjjg3ig',
+    accessToken:'guJQMz5h39zhGLFemZudb_AUudM5d23tf0RkNehkPXY'
       })
       
       client.getEntries({
@@ -201,12 +201,12 @@ else{
       .catch(console.error)
     }
 })
-setTimeout(Load,15000)
+onload = Load()
 // document.addEventListener('DOMContentLoaded',Load)
 function Load(){
   var client = contentful.createClient({
-    space:process.env.SpaceID,
-    accessToken:process.env.ContentDeliveryApi
+    space:'g83j5mjjg3ig',
+    accessToken:'guJQMz5h39zhGLFemZudb_AUudM5d23tf0RkNehkPXY'
   })
   client.sync({initial: true})
   .then((response) => {
