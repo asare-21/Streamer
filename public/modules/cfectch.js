@@ -1,7 +1,7 @@
 export const cfetch = () =>{
     var client = contentful.createClient({
-        space:'g83j5mjjg3ig',
-        accessToken:'guJQMz5h39zhGLFemZudb_AUudM5d23tf0RkNehkPXY'
+        space:process.env.SpaceID,
+        accessToken:process.env.ContentDeliveryApi
       })
       client.sync({initial: true})
       .then((response) => {
@@ -68,30 +68,4 @@ export const cfetch = () =>{
 
 }
 
-// export const Firebase = () => {
 
-// }
-// const storageRef = firebase.storage().ref().child('Videos/')
-
-// storageRef.listAll().then(function(url) {
-//   // `url` is the download URL for 'images/stars.jpg'
-//   console.log(url.items[0].name)
-//   const v = firebase.storage().ref().child(`Videos/${url.items[0].name}`)
-//   v.getDownloadURL().then((url)=>{
-//     // console.log(url)
-//   })
-//   // This can be downloaded directly:
-//   // var xhr = new XMLHttpRequest();
-//   // xhr.responseType = 'blob';
-//   // xhr.onload = function(event) {
-//   //   var blob = xhr.response;
-//   // };
-//   // xhr.open('GET', url);
-//   // xhr.send();
-
-//   // // Or inserted into an <img> element:
-//   // var img = document.getElementById('myimg');
-//   // img.src = url;
-// }).catch(function(error) {
-//   // Handle any errors
-// });

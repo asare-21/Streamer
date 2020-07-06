@@ -4,7 +4,7 @@ import {Fetch} from './fetch.js'
 import {cfetch} from './cfectch.js'
 import {navigate} from './pages.js'
 import {description} from './pop.js'
-import { verifyFunc } from './verify.js'
+
 
 let count = true
 let c = true
