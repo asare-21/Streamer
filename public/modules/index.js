@@ -201,7 +201,7 @@ else{
       .catch(console.error)
     }
 })
-setTimeout(Load,3000)
+setTimeout(Load,5000)
 // document.addEventListener('DOMContentLoaded',Load)
 function Load(){
   var client = contentful.createClient({
