@@ -12,5 +12,5 @@ var client = contentful.createClient({
   accessToken:process.env.ContentDeliveryApi
 });
 
-
+console.log(process.env.SpaceID)
 app.listen(port, () => console.log(`Listening at http://localhost:${port}`))
