@@ -14,7 +14,7 @@ export const cfetch = ()=>{
             }
                 
           else { if(!n.hasOwnProperty('description') ){
-                console.log(n)
+                // console.log(n)
                 const e = ` <img src=${n.image['en-US'].fields.file['en-US'].url} alt="">
                 <p class="t">${n.title['en-US']}</p>`
                 const div = document.createElement('div')
