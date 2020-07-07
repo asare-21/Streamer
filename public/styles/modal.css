@@ -24,7 +24,7 @@
     height: 500px;
     background:linear-gradient(to right, rgb(15, 32, 39), rgb(32, 58, 67), rgb(44, 83, 100));
     position: fixed;
-    z-index:10;
+    z-index:12;
     left: 50%;
     top: 50%;
     transform: translate(-50%,-50%);
