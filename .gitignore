@@ -4,7 +4,6 @@ node_modules/
 .netlify
 index.js
 c.js
-cfetch.js
 pages.js
 pop.js
 slide.js
