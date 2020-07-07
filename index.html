@@ -6,6 +6,7 @@
     <script type="module" src="public/modules/index-min.js" defer></script>
     <link rel="stylesheet" href="public/styles/style-min.css">
     <link rel="stylesheet" href="public/styles/modal-min.css">
+    <link rel="stylesheet" href="public/styles/load.css">
     <link rel="stylesheet" href="public/styles/pop-min.css">
     <script src="https://kit.fontawesome.com/4ef8fae322.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/contentful@latest/dist/contentful.browser.min.js"></script>
@@ -14,6 +15,41 @@
 </head>
 <body>
     <noscript>You need to enable javascript to view this site</noscript>
+
+    <div class="cssload-wrap">
+        <div class="cssload-circle"></div>
+        <div class="cssload-circle"></div>
+        <div class="cssload-circle"></div>
+        <div class="cssload-circle"></div>
+        <div class="cssload-circle"></div>
+        <div class="cssload-circle"></div>
+        <div class="cssload-circle"></div>
+        <div class="cssload-circle"></div>
+        <div class="cssload-circle"></div>
+        <div class="cssload-circle"></div>
+        <div class="cssload-circle"></div>
+        <div class="cssload-circle"></div>
+        <div class="cssload-circle"></div>
+        <div class="cssload-circle"></div>
+        <div class="cssload-circle"></div>
+        <div class="cssload-circle"></div>
+        <div class="cssload-circle"></div>
+        <div class="cssload-circle"></div>
+        <div class="cssload-circle"></div>
+        <div class="cssload-circle"></div>
+        <div class="cssload-circle"></div>
+        <div class="cssload-circle"></div>
+        <div class="cssload-circle"></div>
+        <div class="cssload-circle"></div>
+        <div class="cssload-circle"></div>
+        <div class="cssload-circle"></div>
+        <div class="cssload-circle"></div>
+        <div class="cssload-circle"></div>
+        <div class="cssload-circle"></div>
+        <div class="cssload-circle"></div>
+    </div>
+
+
     <header>
         <!-- Side menu over here -->
         <div class="side-nav">
@@ -179,7 +215,9 @@
     appId: "1:302598523042:web:ca33b016ef1836d3faeffb",
     measurementId: "G-2DPGSLXXWP"
   };
-
+  document.onreadystatechange(()=>{
+      document.querySelector('.cssload-wrap').style.display = 'none'
+  })
 
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
