@@ -333,13 +333,12 @@ nav li{
 }
 .movie{
     width: 200px;
-    height: auto;
+    height: 350px;
     border: 1px solid white;
     border-radius:10px;
     padding: 5px 5px 5px 5px;
     float:left;
     margin: 6px 6px 6px 6px ;
-
 }
 .movie img{
     height: 270px;
@@ -348,7 +347,9 @@ nav li{
 }
 .movie p{
     color: white;
+    font-size: 15px;
 }
+
 .movie a{
     text-decoration: underline;
     color: royalblue;
