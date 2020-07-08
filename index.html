@@ -203,7 +203,7 @@
           response.entries.forEach(entry => {
           if(entry.fields.hasOwnProperty('background')){
             const backgroundImage = entry.fields.background['en-US'].fields.file['en-US'].url
-            document.body.style.background = `url(${backgroundImage})`
+            // document.body.style.background = `url(${backgroundImage})`
 
             function change_favicon(img) {
     var favicon = document.querySelector('link[rel="shortcut icon"]');
