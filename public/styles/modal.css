@@ -1,26 +1,39 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
 
 .account-modal {
-    width: 100%;
-    height: 100vh;
-    position: absolute;
-    left: 0%;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    transform: translate(-49%);
-    background: rgba(0, 0, 0, 0.4);
-    z-index: 20;
-    overflow: hidden;
-    display: none;
-    /* visibility: hidden; */
+     width: 100%;
+     height: 100%;
+     position: absolute;
+     left: 0;
+     top: 0;
+     right: 0;
+     bottom: 0;
+     transform: translateX(-100%);
+     -webkit-transform: translateX(-100%);
+     -moz-transform: translateX(-100%);
+     -ms-transform: translateX(-100%);
+     -o-transform: translateX(-100%);
+     transition: all 0.3s ease;
+     backdrop-filter: blur(50px);
+     z-index: 20;
+     overflow: hidden;
+     -webkit-transition: all 0.3s ease;
+     -moz-transition: all 0.3s ease;
+     -ms-transition: all 0.3s ease;
+     -o-transition: all 0.3s ease;
 }
 
 .account-modal.toggle {
-    display: block;
-    transition: all 0.5s linear;
-    -webkit-animation: fall 0.5s linear 1 both;
-            animation: fall 0.5s linear 1 both;
+    transform: translateX(0);
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -o-transform: translateX(0);
+    transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
 }
 
 .modal-content {
@@ -35,10 +48,10 @@
     transition: all 0.5s linear;
 }
 
-.account-modal {
+/* .account-modal {
     -webkit-animation: fallb 0.5s linear 1 both;
             animation: fallb 0.5s linear 1 both;
-}
+} */
 
 .close {
     width: 50px;
@@ -67,45 +80,7 @@
     transform: rotate(-45deg) translate(5px, -5px);
 }
 
-@-webkit-keyframes fall {
-    from {
-        transform: translate(50%);
-    }
 
-    to {
-        transform: translate(0);
-    }
-}
-
-@keyframes fall {
-    from {
-        transform: translate(50%);
-    }
-
-    to {
-        transform: translate(0);
-    }
-}
-
-@-webkit-keyframes fallb {
-    from {
-        transform: translate(0);
-    }
-
-    to {
-        transform: translate(50%);
-    }
-}
-
-@keyframes fallb {
-    from {
-        transform: translate(0);
-    }
-
-    to {
-        transform: translate(50%);
-    }
-}
 
 .picHold {
     width: 100%;
@@ -271,28 +246,43 @@ select:focus {
 
 
 .searchModal {
-    width: 100%;
-    height: 300px;
-    /* background:linear-gradient(to right, #243B55, #141E30); */
-    -webkit-backdrop-filter: blur(10px);
-            backdrop-filter: blur(10px);
-    position: fixed;
-    top: 0%;
-    left: 50%;
-    transform: translate(-50%);
-    display: none;
-    justify-content: center;
-    align-items: center;
-    border-radius: 10px;
-    z-index: 15;
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12),
-        0 2px 2px rgba(0, 0, 0, 0.12),
-        0 4px 4px rgba(0, 0, 0, 0.12),
-        0 8px 8px rgba(0, 0, 0, 0.12),
-        0 16px 16px rgba(0, 0, 0, 0.12);
+        width: 100%;
+        height: 300px;
+        /*background:linear-gradient(to right, #243B55, #141E30);
+        */-webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+        position: fixed;
+        top: 0%;
+        left: 0%;
+        transform: translate(-50%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+        z-index: 15;
+        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12),        0 2px 2px rgba(0, 0, 0, 0.12),        0 4px 4px rgba(0, 0, 0, 0.12),        0 8px 8px rgba(0, 0, 0, 0.12),        0 16px 16px rgba(0, 0, 0, 0.12);
+        transform:translateY(-100%) ;
+        -webkit-transform:translateY(-100%) ;
+        -moz-transform:translateY(-100%) ;
+        -ms-transform:translateY(-100%) ;
+        -o-transform:translateY(-100%) ;
+        transition: all 0.3s ease;
+        -webkit-transition: all 0.3s ease;
+        -moz-transition: all 0.3s ease;
+        -ms-transition: all 0.3s ease;
+        -o-transition: all 0.3s ease;
 }
 .searchModal.open {
-    display: flex;
+    transform:translateY(00%) ;
+    -webkit-transform:translateY(00%) ;
+    -moz-transform:translateY(00%) ;
+    -ms-transform:translateY(00%) ;
+    -o-transform:translateY(00%) ;
+    transition: all 0.5s linear;
+    -webkit-transition: all 0.5s linear;
+    -moz-transition: all 0.5s linear;
+    -ms-transition: all 0.5s linear;
+    -o-transition: all 0.5s linear;
 }
 
 .searchModal input {
