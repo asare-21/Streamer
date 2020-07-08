@@ -365,7 +365,7 @@ nav li{
 }
 .movie{
     width: 200px;
-    height: 350px;
+    height: 360px;
     border: 1px solid #437cb6;
     border-radius:10px;
     padding: 5px 5px 5px 5px;
@@ -379,7 +379,7 @@ nav li{
 }
 .movie p{
     color: white;
-    font-size: 15px;
+    font-size: 14px;
 }
 
 .movie a{
