@@ -199,7 +199,7 @@ i{
         overflow: initial;
     }
     .navigation{
-        height: 0px;  
+        height: 400px;  
         width: 100%;
         background: var(--background);
         display: flex;
@@ -207,26 +207,60 @@ i{
         justify-content: center;
         align-items: center;
         position: absolute;
-        left: 50%;
-        transform: translate(-50%);
+        /* left: 50%; */
+        transform: translate(0,-100%);
         box-shadow: var(--boxShadow);
         transition: all 0.5s ease;
-        visibility: hidden;  
+        /* visibility: hidden;   */
+        animation-name: dropIn;
+        animation-timing-function: ease;
+        animation-duration: 0.5s;
+        animation-fill-mode: forwards;
+        animation-direction: reverse;
     }
     .navigation.show{
-        height: 400px;
-        transition: all 0.5s ease-in;
         padding: 10px 0 0 0;
-        visibility: visible;
+        /* visibility: visible; */
+        animation-name: dropOut;
+        animation-timing-function: linear;
+        animation-duration: 0.5s;
+        animation-fill-mode: forwards;
+        /* animation-direction: normal; */
     }
-    .navigation p{
+    /* .navigation p{
         visibility: hidden;
     }
     .navigation.show p{
         height: 50px;
         visibility: visible;
-    }
+    } */
     
+    }
+    @keyframes dropIn{
+        0%{
+            transform: translateY(-100%);
+        }
+        25%{
+            transform: translateY(-50%);
+        }
+        50%{
+            transform: translateY(0%);
+        }
+        75%{
+            transform: translateY(2%);
+        }
+        100%{
+            transform: translateY(0%);
+        }
+    }
+    @keyframes dropOut{
+        from{
+            transform: translateY(0);
+        }
+        to{
+            transform: translateY(-100%);
+        }
+        
     }
 
 
