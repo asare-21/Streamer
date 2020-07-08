@@ -40,7 +40,8 @@ html,body{
 .side-nav{
     height: 50px ;
     width: 100%;
-    background:var(--background);
+    /* background:var(--background); */
+    backdrop-filter: blur(10px);
     position: fixed;
     left: 0;
     top: 0;
