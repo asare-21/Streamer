@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
 
-.account-modal{
+.account-modal {
     width: 100%;
     height: 100vh;
     position: absolute;
@@ -9,33 +9,38 @@
     right: 0;
     bottom: 0;
     transform: translate(-49%);
-    background: rgba(0,0,0,0.4);
+    background: rgba(0, 0, 0, 0.4);
     z-index: 20;
     overflow: hidden;
     display: none;
     /* visibility: hidden; */
 }
 
-.account-modal.toggle{
-    display:block ;
+.account-modal.toggle {
+    display: block;
     transition: all 0.5s linear;
-    animation: fall 0.5s linear 1 both;
+    -webkit-animation: fall 0.5s linear 1 both;
+            animation: fall 0.5s linear 1 both;
 }
-.modal-content{
+
+.modal-content {
     width: 800px;
     height: 500px;
-    background:linear-gradient(to right, rgb(15, 32, 39), rgb(32, 58, 67), rgb(44, 83, 100));
+    background: linear-gradient(to right, rgb(15, 32, 39), rgb(32, 58, 67), rgb(44, 83, 100));
     position: fixed;
-    z-index:12;
+    z-index: 12;
     left: 50%;
     top: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
     transition: all 0.5s linear;
 }
-.account-modal{
-    animation: fallb 0.5s linear 1 both;
+
+.account-modal {
+    -webkit-animation: fallb 0.5s linear 1 both;
+            animation: fallb 0.5s linear 1 both;
 }
-.close{
+
+.close {
     width: 50px;
     height: 50px;
     border: 1px solid white;
@@ -47,35 +52,62 @@
     align-items: center;
     flex-direction: column;
 }
-.close .lin{
+
+.close .lin {
     width: 90%;
     height: 5px;
     background-color: red;
     margin: 5px;
     border-radius: 20px;
     position: relative;
-    transform: rotate(45deg) translate(5px,5px);
+    transform: rotate(45deg) translate(5px, 5px);
 }
-.lin:nth-child(2){
-    transform: rotate(-45deg) translate(5px,-5px);
+
+.lin:nth-child(2) {
+    transform: rotate(-45deg) translate(5px, -5px);
 }
-@keyframes fall{
-    from{
+
+@-webkit-keyframes fall {
+    from {
         transform: translate(50%);
     }
-    to{
+
+    to {
         transform: translate(0);
     }
 }
-@keyframes fallb{
-    from{
+
+@keyframes fall {
+    from {
+        transform: translate(50%);
+    }
+
+    to {
         transform: translate(0);
     }
-    to{
+}
+
+@-webkit-keyframes fallb {
+    from {
+        transform: translate(0);
+    }
+
+    to {
         transform: translate(50%);
     }
 }
-.picHold{
+
+@keyframes fallb {
+    from {
+        transform: translate(0);
+    }
+
+    to {
+        transform: translate(50%);
+    }
+}
+
+.picHold {
     width: 100%;
     height: 160px;
     display: flex;
@@ -83,7 +115,8 @@
     align-items: center;
     margin-top: 30px;
 }
-.picSelect{
+
+.picSelect {
     width: 150px;
     height: 150px;
     border: 1px solid white;
@@ -93,12 +126,14 @@
     justify-content: center;
     cursor: pointer;
 }
-.picSelect img{
+
+.picSelect img {
     height: 100%;
     width: 100%;
     border-radius: 10px;
 }
-.detailsHold{
+
+.detailsHold {
     width: 100%;
     min-height: 20vh;
     display: flex;
@@ -106,12 +141,14 @@
     align-items: center;
     flex-wrap: wrap;
 }
-.name{
+
+.name {
     width: 200px;
     height: 50px;
     border-radius: 10px;
 }
-.name input{
+
+.name input {
     width: 100%;
     height: 100%;
     text-align: center;
@@ -120,7 +157,8 @@
     border-radius: 10px;
     cursor: pointer;
 }
-.chooseCat{
+
+.chooseCat {
     width: 200px;
     height: 50px;
     text-align: center;
@@ -128,85 +166,116 @@
     font-size: 16px;
     border: none;
 }
-.chooseCat select{
+
+.chooseCat select {
     width: 100%;
     height: 100%;
     border-radius: 10px;
     cursor: pointer;
 }
-select:focus{
+
+select:focus {
     border: none;
 }
-.chooseCat label{
+
+.chooseCat label {
     transform: translateY(-25px);
     color: white;
     position: absolute;
 }
 
-@media screen and (max-width:809px){
-    .modal-content{
+@media screen and (max-width:809px) {
+    .modal-content {
         width: 100%;
         min-height: 400px;
         /* position: absolute;
         transform: translate(-43%,-50%); */
     }
-    .detailsHold{
+
+    .detailsHold {
         flex-direction: column;
     }
 }
-@media screen and (max-width:680px){
-    .modal-content{
+
+@media screen and (max-width:680px) {
+    .modal-content {
         width: 500px;
         height: 400px;
         /* position: absolute;
         transform: translate(-50%,-50%); */
     }
 
-    .picSelect{
+    .picSelect {
         width: 100px;
         height: 100px;
     }
-    .detailsHold div{
+
+    .detailsHold div {
         width: 60%;
     }
 }
-@media screen and (max-width:450px){
 
-    .modal-content{
+@media screen and (max-width:450px) {
+
+    .modal-content {
         width: 100%;
-        height:auto;
+        height: auto;
         /* position: absolute;
         transform: translate(-50%,-50%); */
     }
-    .picHold{
+
+    .picHold {
         height: 15vh;
     }
-    .picSelect{
+
+    .picSelect {
         width: 100px;
         height: 100px;
     }
-    .name,.chooseCat{
+
+    .name,
+    .chooseCat {
         width: 150px;
         height: 30px;
     }
-    .name input::placeholder{
+
+    .name input::-webkit-input-placeholder {
         font-size: 12px;
     }
-    .chooseCat label{
+
+    .name input::-moz-placeholder {
+        font-size: 12px;
+    }
+
+    .name input:-ms-input-placeholder {
+        font-size: 12px;
+    }
+
+    .name input::-ms-input-placeholder {
+        font-size: 12px;
+    }
+
+    .name input::placeholder {
+        font-size: 12px;
+    }
+
+    .chooseCat label {
         font-size: 13px;
     }
-    body.toggle{
+
+    body.toggle {
         overflow: hidden;
         height: 100vh;
     }
 }
 
 
-.searchModal{
+.searchModal {
     width: 100%;
     height: 300px;
     /* background:linear-gradient(to right, #243B55, #141E30); */
-    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
     position: fixed;
     top: 0%;
     left: 50%;
@@ -216,28 +285,51 @@ select:focus{
     align-items: center;
     border-radius: 10px;
     z-index: 15;
-    box-shadow: 0 1px 1px rgba(0,0,0,0.12), 
-    0 2px 2px rgba(0,0,0,0.12), 
-    0 4px 4px rgba(0,0,0,0.12), 
-    0 8px 8px rgba(0,0,0,0.12),
-    0 16px 16px rgba(0,0,0,0.12);
-}
-.searchModal.open{
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12),
+        0 2px 2px rgba(0, 0, 0, 0.12),
+        0 4px 4px rgba(0, 0, 0, 0.12),
+        0 8px 8px rgba(0, 0, 0, 0.12),
+        0 16px 16px rgba(0, 0, 0, 0.12);
+
+.searchModal.open {
     display: flex;
 }
-.searchModal input{
+
+.searchModal input {
     width: 80%;
     height: 50px;
     font-size: 16px;
     padding: 0 10px 0 10px;
     border-radius: 10px;
 }
-.searchModal input:focus{
+
+.searchModal input:focus {
     border: 2px solid rgb(33, 182, 33);
     outline: none;
 }
-.searchModal input::placeholder{
+
+.searchModal input::-webkit-input-placeholder {
     text-align: center;
     font-size: 16px;
 }
 
+.searchModal input::-moz-placeholder {
+    text-align: center;
+    font-size: 16px;
+}
+
+.searchModal input:-ms-input-placeholder {
+    text-align: center;
+    font-size: 16px;
+}
+
+.searchModal input::-ms-input-placeholder {
+    text-align: center;
+    font-size: 16px;
+}
+
+.searchModal input::placeholder {
+    text-align: center;
+    font-size: 16px;
+}
+}

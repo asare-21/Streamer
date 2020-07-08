@@ -2,7 +2,8 @@
     width: auto;
     min-height:10vh;
     /* background:linear-gradient(to right, rgb(15, 32, 39), rgb(32, 58, 67), rgb(44, 83, 100)); */
-    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+            backdrop-filter: blur(20px);
     border-radius: 10px;
     display: none;
     position: absolute;

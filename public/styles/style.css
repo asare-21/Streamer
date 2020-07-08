@@ -11,8 +11,7 @@ html,body{
     background:var(--background);
     height: 100%;
     max-width: 100vw;
-    background: #141E30;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #243B55, #141E30);  /* Chrome 10-25, Safari 5.1-6 */
+    background: #141E30;  /* fallback for old browsers */  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #243B55, #141E30); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */    
 }
 :root{
@@ -26,22 +25,21 @@ html,body{
     width: 12px;
 }
     
-::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+::-webkit-scrollbar-track { 
     box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
     /* border-radius: 10px; */
 }
  
 ::-webkit-scrollbar-thumb {
-    /* border-radius: 10px; */
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+    /* border-radius: 10px; */ 
     box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
 }
 .side-nav{
     height: 50px ;
     width: 100%;
     /* background:var(--background); */
-    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
     position: fixed;
     left: 0;
     top: 0;
@@ -208,23 +206,49 @@ i{
         align-items: center;
         position: absolute;
         box-shadow: var(--boxShadow);
-        animation-name: dropIn;
-        animation-timing-function: ease;
-        animation-duration: 0.3s;
-        animation-fill-mode: forwards;
+        -webkit-animation-name: dropIn;
+                animation-name: dropIn;
+        -webkit-animation-timing-function: ease;
+                animation-timing-function: ease;
+        -webkit-animation-duration: 0.3s;
+                animation-duration: 0.3s;
+        -webkit-animation-fill-mode: forwards;
+                animation-fill-mode: forwards;
         animation-direction: reverse;
     }
     .navigation.show{
         padding: 10px 0 0 0;
         visibility: visible;
-        animation-name: dropOut;
-        animation-timing-function: linear;
-        animation-duration: 0.3s;
-        animation-fill-mode: forwards;
+        -webkit-animation-name: dropOut;
+                animation-name: dropOut;
+        -webkit-animation-timing-function: linear;
+                animation-timing-function: linear;
+        -webkit-animation-duration: 0.3s;
+                animation-duration: 0.3s;
+        -webkit-animation-fill-mode: forwards;
+                animation-fill-mode: forwards;
         /* animation-direction: normal; */
     }
 
     
+    }
+    @-webkit-keyframes dropIn{
+        0%{
+            transform: translateY(-100%);
+
+        }
+        25%{
+            transform: translateY(-50%);
+        }
+        50%{
+            transform: translateY(0%);
+        }
+        75%{
+            transform: translateY(8%);
+        }
+        100%{
+            transform: translateY(0%);
+        }
     }
     @keyframes dropIn{
         0%{
@@ -243,6 +267,15 @@ i{
         100%{
             transform: translateY(0%);
         }
+    }
+    @-webkit-keyframes dropOut{
+        from{
+            transform: translateY(0);
+        }
+        to{
+            transform: translateY(-100%);
+        }
+        
     }
     @keyframes dropOut{
         from{
