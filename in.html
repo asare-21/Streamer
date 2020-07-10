@@ -19,11 +19,8 @@
   --input-padding-y: .75rem;
 }
 body{
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
+  backdrop-filter: blur(50px);
+  background: rgb(39, 45, 65);
 }
 .card-signin {
   border: 0;
@@ -226,11 +223,11 @@ body{
         client.sync({initial: true}).then(response => {
           response.entries.forEach(entry => {
           if(entry.fields.hasOwnProperty('background')){
-            const backgroundImage = entry.fields.background['en-US'].fields.file['en-US'].url
-            document.body.style.background = `url(${backgroundImage})`
-            document.body.style.backgroundRepeat = 'no-repeat' 
-            document.body.style.backgroundSize = 'cover' 
-            document.body.style.backgroundPosition = 'center' 
+            // const backgroundImage = entry.fields.background['en-US'].fields.file['en-US'].url
+            // document.body.style.background = `url(${backgroundImage})`
+            // document.body.style.backgroundRepeat = 'no-repeat' 
+            // document.body.style.backgroundSize = 'cover' 
+            // document.body.style.backgroundPosition = 'center' 
 
             function change_favicon(img) {
     var favicon = document.querySelector('link[rel="shortcut icon"]');
