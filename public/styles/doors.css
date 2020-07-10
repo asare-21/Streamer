@@ -1,0 +1,160 @@
+body.move{
+    overflow: hidden;
+    height: 100%;
+}
+:root{
+    --transition : all 0.5s linear
+}
+.doors{
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    backdrop-filter: blur(100px);
+    z-index: 100;
+    transform: translateY(0%);
+    -webkit-transform: translateY(00%);
+    -moz-transform: translateY(00%);
+    -ms-transform: translateY(00%);
+    -o-transform: translateY(00%);
+    transition: var(--transition);
+    -webkit-transition: var(--transition);
+    -moz-transition: var(--transition);
+    -ms-transition: var(--transition);
+    -o-transition: var(--transition);
+}
+.doors i{
+    font-size: 45px;
+}
+.leftDoor{
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    backdrop-filter: blur(200px);
+    border-right: 2px solid white;
+    transform: translateX(0%);
+    -webkit-transform: translateX(00%);
+    -moz-transform: translateX(00%);
+    -ms-transform: translateX(00%);
+    -o-transform: translateX(00%);
+    transition: var(--transition);
+    -webkit-transition: var(--transition);
+    -moz-transition: var(--transition);
+    -ms-transition: var(--transition);
+    -o-transition: var(--transition);
+}
+.leftDoor i,.rightDoor i{
+    position: absolute;
+    top: 50%;
+    right: 10px;
+}
+.rightDoor i{
+    left: 10px;
+}
+.rightDoor{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    width: 50%;
+    backdrop-filter: blur(200px);
+    border-left: 2px solid white;
+    transform: translateX(00%);
+    -webkit-transform: translateX(00%);
+    -moz-transform: translateX(00%);
+    -ms-transform: translateX(00%);
+    -o-transform: translateX(00%);
+    transition: var(--transition);
+    -webkit-transition: var(--transition);
+    -moz-transition: var(--transition);
+    -ms-transition: var(--transition);
+    -o-transition: var(--transition);
+}
+.doors.move{
+    transform: translateX(0);
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -o-transform: translateX(0);
+    animation-name: moveD;
+    animation-timing-function: ease;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    animation-delay: 1300ms;
+    animation-iteration-count: 1;
+    animation-play-state: running;
+}
+.leftDoor.move{
+    animation-name: move;
+    animation-timing-function: ease;
+    animation-duration: 0.8s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+    animation-delay: 500ms;
+    animation-play-state: running;
+}
+.rightDoor.move{
+    animation-name: movE;
+    animation-timing-function: ease;
+    animation-duration: 0.8s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+    animation-delay: 500ms;
+    animation-play-state: running;
+}
+
+@keyframes move{
+    from{
+        transform: translate(0%);
+        -webkit-transform: translate(0%);
+        -moz-transform: translate(0%);
+        -ms-transform: translate(0%);
+        -o-transform: translate(0%);
+}
+to{
+    transform: translate(-100%);
+    -webkit-transform: translate(-100%);
+    -moz-transform: translate(-100%);
+    -ms-transform: translate(-100%);
+    -o-transform: translate(-100%);
+}
+}
+
+@keyframes movE{
+    from{
+        transform: translate(0%);
+        -webkit-transform: translate(0%);
+        -moz-transform: translate(0%);
+        -ms-transform: translate(0%);
+        -o-transform: translate(0%);
+}
+to{
+    transform: translate(100%);
+    -webkit-transform: translate(100%);
+    -moz-transform: translate(100%);
+    -ms-transform: translate(100%);
+    -o-transform: translate(100%);
+}
+}
+@keyframes moveD{
+    from{
+        transform: translate(0,0);
+        -webkit-transform: translate(0,0);
+        -moz-transform: translate(0,0);
+        -ms-transform: translate(0,0);
+        -o-transform: translate(0,0);
+}
+to{
+    transform: translate(0,-100%);
+    -webkit-transform: translate(0,-100%);
+    -moz-transform: translate(0,-100%);
+    -ms-transform: translate(0,-100%);
+    -o-transform: translate(0,-100%);
+}
+}
