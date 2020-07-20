@@ -201,38 +201,7 @@
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
   firebase.analytics();
-  firebase.performance();
-
-  var client = contentful.createClient({
-          space:'g83j5mjjg3ig',
-          accessToken:'guJQMz5h39zhGLFemZudb_AUudM5d23tf0RkNehkPXY'
-        })
-        client.sync({initial: true}).then(response => {
-          response.entries.forEach(entry => {
-          if(entry.fields.hasOwnProperty('background')){
-            const backgroundImage = entry.fields.background['en-US'].fields.file['en-US'].url
-            // document.body.style.background = `url(${backgroundImage})`
-
-            function change_favicon(img) {
-    var favicon = document.querySelector('link[rel="shortcut icon"]');
-    
-    if (!favicon) {
-        favicon = document.createElement('link');
-        favicon.setAttribute('rel', 'shortcut icon');
-        var head = document.querySelector('head');
-        head.appendChild(favicon);
-    }
-    
-    
-    favicon.setAttribute('type', 'image/png');
-    favicon.setAttribute('href', img);
-}
-
-change_favicon(`${backgroundImage}`);
-          }
-          })
-        })
-  
+  firebase.performance();  
 
 </script>
 <noscript>You need to enable javascript to view this site</noscript>
