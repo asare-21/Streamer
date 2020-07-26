@@ -10,7 +10,7 @@ export const cfetch = ()=>{
           else {
              if(!n.fields.hasOwnProperty('description') ){
               
-                const e = ` <img src=${n.fields.image.fields.file.url} alt="">
+                const e = ` <img data-src=${n.fields.image.fields.file.url} alt="" data-lazy-load >
                 <p class="t">${n.fields.title}</p>`
                 const div = document.createElement('div')
                 div.className = 'previews'
@@ -21,8 +21,8 @@ export const cfetch = ()=>{
             // console.log('here')
             if (n.hasOwnProperty("videoLink")) {
                 
-                const e = `\n            <img src=${n.fields.image.fields.file.url} alt="">\n           <p class="title" >${n.title["en-US"]}  </p>\n           \n           <p id="description" style="display:none">\n             ${n.fields.description}\n           </p>\n           <video src=${n.fields.videoLink}  controls style="width: 100%; height: auto; display:none"></video>\n          `
-                  , i = `<img src=${n.fields.image.fields.file.url} alt=""> `
+                const e = `\n            <img data-src=${n.fields.image.fields.file.url} alt="" data-lazy-load >\n           <p class="title" >${n.title["en-US"]}  </p>\n           \n           <p id="description" style="display:none">\n             ${n.fields.description}\n           </p>\n           <video src=${n.fields.videoLink}  controls style="width: 100%; height: auto; display:none"></video>\n          `
+                  , i = `<img data-src=${n.fields.image.fields.file.url} alt="" data-lazy-load > `
                   , t = document.createElement("div")
                   , s = document.createElement("div");
                 s.className = "previews",
@@ -34,8 +34,8 @@ export const cfetch = ()=>{
                 
             } else {
               // console.log('Here too')
-                const e = `\n             <img src=${n.fields.image.fields.file.url} alt="">\n            <p class="title" >${n.fields.title}  </p>\n            \n            <p id="description" style="display:none">\n              ${n.fields.description}\n            </p>\n            <video src=${n.fields.videoLink}  controls style="width: 100%; height: auto; display:none"></video>\n            `
-                  , i = `<img src=${n.fields.image.fields.file.url} alt=""> `
+                const e = `\n             <img data-src=${n.fields.image.fields.file.url} alt="" data-lazy-load >\n            <p class="title" >${n.fields.title}  </p>\n            \n            <p id="description" style="display:none">\n              ${n.fields.description}\n            </p>\n            <video src=${n.fields.videoLink}  controls style="width: 100%; height: auto; display:none"></video>\n            `
+                  , i = `<img data-src=${n.fields.image.fields.file.url} alt="" data-lazy-load > `
                   , t = document.createElement("div")
                   , s = document.createElement("div");
                 s.className = "previews",
@@ -47,6 +47,34 @@ export const cfetch = ()=>{
  }       }
 }
         )
+
+        //intersection observer
+const images = document.querySelectorAll('[data-src]')
+console.log(images)
+const imgOptions = {}
+const observer = new IntersectionObserver((entries,observer)=>{
+  entries.forEach(entry=>{
+    if(!entry.isIntersecting) return
+    else{
+      preloadImage(entry.target)
+      observer.unobserve(entry.target)
+    }
+  })
+},imgOptions)
+
+function preloadImage(image){
+  const src = image.getAttribute('data-src')
+  if(!src) return
+  else{
+    image.src = src
+  }
+  console.log('Run')
+}
+images.forEach(image=>{
+  observer.observe(image)
+})
+
+
     }
     )
 }
