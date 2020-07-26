@@ -18,7 +18,7 @@ export const cfetch = ()=>{
                 document.querySelector(".slide").append(div)
             }
             else{
-            console.log('here')
+            // console.log('here')
             if (n.hasOwnProperty("videoLink")) {
                 
                 const e = `\n            <img src=${n.fields.image.fields.file.url} alt="">\n           <p class="title" >${n.title["en-US"]}  </p>\n           \n           <p id="description" style="display:none">\n             ${n.fields.description}\n           </p>\n           <video src=${n.fields.videoLink}  controls style="width: 100%; height: auto; display:none"></video>\n          `
